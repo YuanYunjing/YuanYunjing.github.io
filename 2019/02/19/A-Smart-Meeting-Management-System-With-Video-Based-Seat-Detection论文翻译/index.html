@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="摘要 如今智能会议管理受到人们的广泛关注。现有的大多数智能系统只关注小型会议室中的谈话记录，而本文介绍了一种大礼堂智能会议管理系统。系统中嵌入了级联空座检测算法，以获取每个座位的状态。根据遮挡的程度逐级标示空位情况。结合预先输入的与会者信息，系统可以在会议期间为人们提供就座情况和相应的与会者信息。实验结果表明，座椅状态检测精度可达99.8%。  类别和主题描述符 H.4[图像处理与计算机视觉]:杂">
+<meta name="keywords" content="座位检测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）">
+<meta property="og:url" content="http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/index.html">
+<meta property="og:site_name" content="Orange">
+<meta property="og:description" content="摘要 如今智能会议管理受到人们的广泛关注。现有的大多数智能系统只关注小型会议室中的谈话记录，而本文介绍了一种大礼堂智能会议管理系统。系统中嵌入了级联空座检测算法，以获取每个座位的状态。根据遮挡的程度逐级标示空位情况。结合预先输入的与会者信息，系统可以在会议期间为人们提供就座情况和相应的与会者信息。实验结果表明，座椅状态检测精度可达99.8%。  类别和主题描述符 H.4[图像处理与计算机视觉]:杂">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-19T10:48:54.643Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）">
+<meta name="twitter:description" content="摘要 如今智能会议管理受到人们的广泛关注。现有的大多数智能系统只关注小型会议室中的谈话记录，而本文介绍了一种大礼堂智能会议管理系统。系统中嵌入了级联空座检测算法，以获取每个座位的状态。根据遮挡的程度逐级标示空位情况。结合预先输入的与会者信息，系统可以在会议期间为人们提供就座情况和相应的与会者信息。实验结果表明，座椅状态检测精度可达99.8%。  类别和主题描述符 H.4[图像处理与计算机视觉]:杂">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2019/02/18/selftesting/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$("#i-top").toggle();" onmouseout="$("#i-top").toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$("#i-share").toggle();" onmouseout="$("#i-share").toggle();" onclick="$("#share").toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&text=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&is_video=false&description=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）&body=Check out this article: http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&name=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类别和主题描述符"><span class="toc-number">2.</span> <span class="toc-text">类别和主题描述符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关键字"><span class="toc-number">3.</span> <span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-前言"><span class="toc-number">4.</span> <span class="toc-text">1 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-座位检测"><span class="toc-number">5.</span> <span class="toc-text">2 座位检测</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-粗检索过程"><span class="toc-number">5.1.</span> <span class="toc-text">2.1 粗检索过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-细检索过程"><span class="toc-number">5.2.</span> <span class="toc-text">2.2 细检索过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-按时间结果校准"><span class="toc-number">5.3.</span> <span class="toc-text">2.3 按时间结果校准</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-实验结果与应用"><span class="toc-number">6.</span> <span class="toc-text">3 实验结果与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-PTZ摄像头设置"><span class="toc-number">6.1.</span> <span class="toc-text">3.1 PTZ摄像头设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-座椅检测结果"><span class="toc-number">6.2.</span> <span class="toc-text">3.2 座椅检测结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-座椅检测的应用"><span class="toc-number">6.3.</span> <span class="toc-text">3.3 座椅检测的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-大礼堂的整体情况"><span class="toc-number">6.3.1.</span> <span class="toc-text">3.3.1 大礼堂的整体情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-大礼堂的局部情况"><span class="toc-number">6.3.2.</span> <span class="toc-text">3.3.2 大礼堂的局部情况</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-总结"><span class="toc-number">7.</span> <span class="toc-text">4 总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-致谢"><span class="toc-number">8.</span> <span class="toc-text">5 致谢</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-参考文献"><span class="toc-number">9.</span> <span class="toc-text">6 参考文献</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#笔记"><span class="toc-number">10.</span> <span class="toc-text">笔记</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Orange</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2019-02-19T05:50:28.000Z" itemprop="datePublished">2019-02-19</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/座位检测/">座位检测</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><blockquote>
+<p>如今智能会议管理受到人们的广泛关注。现有的大多数智能系统只关注小型会议室中的谈话记录，而本文介绍了一种大礼堂智能会议管理系统。系统中嵌入了级联空座检测算法，以获取每个座位的状态。根据遮挡的程度逐级标示空位情况。结合预先输入的与会者信息，系统可以在会议期间为人们提供就座情况和相应的与会者信息。实验结果表明，座椅状态检测精度可达99.8%。</p>
+</blockquote>
+<h1 id="类别和主题描述符"><a href="#类别和主题描述符" class="headerlink" title="类别和主题描述符"></a>类别和主题描述符</h1><blockquote>
+<p>H.4[图像处理与计算机视觉]:杂项</p>
+</blockquote>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><blockquote>
+<p>智能会议，视频分析，座位检测</p>
+</blockquote>
+<hr>
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h1><blockquote>
+<p>会议是以交流和交换信息为目的的最常见的活动之一。因而会议的智能化管理对于提高会议管理的效率，营造安全的会议环境具有非常重大的意义。会议智能管理系统旨在了解会议室中发生了什么、正在发生什么以及将要发生什么。因此，基于物体检测跟踪、行为识别等的视频分析在智能会议管理中扮演着非常重要的角色。</p>
+<p>到目前为止，已经有许多智能会议相关的概念, [1, 2, 3, 4]. 其中有许多都借助视频分析来理解其情境中的内容。检测和跟踪的方法是用来分析与会者的行为[5,6]，以了解在会议室里发生了什么。然而，在一个大礼堂里，人们总是在整个会议过程中坐在自己的座位上。 很少有互动发生。在室内环境中，遮挡和阴影是检测和跟踪的两个主要问题。 为了解决这个问题，之前的一些作品使用了对阴影和照明等变化不敏感的3D信息[7,8]。此外，基于3D的方法需要强大的硬件支持，尤其是在参会者众多的情况下，使得这些方法很难满足实时性的要求。除了3D方法，Dai等人[9]利用运动、颜色、梯度、原始灰度特征作为视觉线索，形成一个增强级联[10]以供人物检测。他们认为运动是人类存在的重要线索，这使得运动对光照变化和其他干扰非常敏感。在<a href="../../images/3.png">3</a>中，人脸检测直接参与其中。然而，由于人脸识别在这一过程中是必要的，因此人脸的角度至关重要。虽然这个问题可以通过建立包含一定角度的训练人脸数据库来解决，但是在会议中仍然需要估计人脸的朝向。</p>
+<p>然而，这些系统更多的关注的是人们在会议过程中的互动，然而这里仍存在很多局限。例如，<a href="../../images/1.png">1</a>要求会议室较小，系统可以通过高质量的图像捕捉到参与者行为的细节; <a href="../../images/2.png">2</a>参加者人数应足够少，以使系统免受严重的干扰和阻塞;<a href="../../images/3.png">3</a>到场人员流动性低是保证系统有效性的必要条件; <a href="../../images/4.png">4</a>这些系统强调对个人的分析，应该安装大量的摄像头，以确保每个人都有一个良好的视野在全领域。因此，它们只适用于人数不超过10人的小型会议室。</p>
+<p>在如图1所示的可以容纳数千人的大礼堂中，记录参与者的状态比记录他们的互动更重要。在如图1所示的可以容纳数千人的大礼堂中，记录参与者的状态比记录他们的互动更重要。本文关注的是大礼堂的整体情况，而不是个人的行为。礼堂的情况可以通过会议期间的人的存在来反映。考虑到座位与参会者之间的一致性，该问题可视为座位检测问题。了解参会者在座位上的状态是一种直接控制和预测会议进展的方法。这将有助于人们在会议管理方面采取适当的行动。</p>
+<p>在大礼堂中，座椅检测任务存在许多具体问题。第一个问题是在礼堂面积大，人数多的情况下，如何在图像分辨率和摄像机数量之间保持良好的平衡。其次，座椅检测容易产生严重的噪声。座椅的特点应该是对光照变化、人影和光点有较强的鲁棒性。第三，外部干扰对座椅检测结果造成很大的干扰。针对上述问题，本文提出了一些解决方案。视频捕捉设备是PTZ摄像机，可以在多个预设之间切换。针对严重的噪声问题，提出了一种三步走检测算法。最后，有一个校准过程来处理所有座椅信息的统计，这个过程可以纠正由于座椅情况临时变化而导致的错误结果。</p>
+<p>本文主要为构建智能会议提供两种支持:1)在大型礼堂中使用PTZ摄像机采集图像;2)提出了一种处理遮挡的座椅检测的三步检测方法。论文的提纲如下。第2节首先对座椅检测算法进行了详细介绍。第3节给出了在实际礼堂中的实验结果和应用，验证了所提出的座椅检测算法的有效性。最后对工作进行了总结，并对今后的工作进行了展望。</p>
+</blockquote>
+<hr>
+<h1 id="2-座位检测"><a href="#2-座位检测" class="headerlink" title="2 座位检测"></a>2 座位检测</h1><blockquote>
+<p>本节将详细介绍座椅检测算法。座位检测的任务可以描述为座位是否有人坐的问题。然而，在会议期间，一些座位会被严重的噪音所堵塞，比如包或衣服。在这种情况下，很难发现他们是空座位。针对这一问题，提出了一种三步检测方法。它是建立在一个推进级联的基础上的。其基本思想是，座椅的外观根据遮挡的级别和位置变化很大。事实上，所有的空座在颜色、形状和质地上都表现出高度的一致性。虽然空座位易发生遮挡，但遮挡往往发生在座位侧面，而遮挡的空座位顶部仍保持原有特征。一旦一个座位被与会者占据，这个座位几乎失去了图像中所有的原始外观。因此，我们将座椅分为三种类型:完全空的、遮挡空的和非空的，如图2所示。</p>
+<p>这三个步骤分别是粗检索过程、细检索过程和结果校准。图3所示为提出的回收空座位的升压级联结构。由于外观一致性高，首先对完全空的座椅进行检索，加快了整个过程的速度，这是一个粗糙的检索过程。在此基础上，对闭塞的空座和非空座进行了具有良好特性的分析，以保证系统的精度。这是一个很好的检索过程。</p>
+<h2 id="2-1-粗检索过程"><a href="#2-1-粗检索过程" class="headerlink" title="2.1 粗检索过程"></a>2.1 粗检索过程</h2><blockquote>
+<p>粗检索过程的目的是区分完全空的座位、封闭的空的座位和非空的座位。考虑到所有的空位在外观上具有高度的一致性，当一个空位被占据时，其外观变化很大。因此，背景和前景之间的减法迅速增加，可以用来获得座椅的状态。首先建立背景模型。为简单起见，礼堂中没有人时拍摄的视频可以用作背景模型。前景区域是直接获得的实时视频。然后使用背景减法。为了对光照变化具有一定的鲁棒性，在HSV颜色空间和梯度图中实现了背景减法。每个座椅的特点可以描述为:</p>
+<p>$$ f^hsv_i = ∥f^hsv_bg − f^hsv_fg ∥_1 $$ </p>
+<p>$ f^grd_i = ∥f^grd_bg − f^grd_fg ∥_1 $  (1)</p>
+<p>最终座位状态 $ S_i $ 通过下式获得:</p>
+<p>$$ S_i = \begin{cases} 0, &amp; \text {if $f^hsv_i + f^grd_i$ &gt; θ} \ 1, &amp; \text{else} \end{cases} $$   (2)</p>
+<p>这里$θ$是状态$ S_i $的阈值</p>
+</blockquote>
+<h2 id="2-2-细检索过程"><a href="#2-2-细检索过程" class="headerlink" title="2.2 细检索过程"></a>2.2 细检索过程</h2><blockquote>
+<p>精细检索过程的目的是区分被遮挡的空座位和非空座位。这是通过对座椅的精细纹理和轮廓分析来实现的。</p>
+<p>HOG特征在很多应用中都被证明是有效的，比如对象检测。考虑到座位被人遮挡和占据时遮挡位置的不同，提出了简化HOG特征(S-HOG)[11]。提取S-HOG的过程如图4所示。</p>
+<p>首先计算每个座块的梯度图，然后将其划分为8*8像素的单元格。在提取HOG特征的过程中，计算每个单元的梯度方向直方图。座块的每个单元表示座位的不同部分。当座椅被人或衣服遮挡时，座椅外观的轮廓会发生变化。根据人体姿势的一致性，座椅的一些单元容易被遮挡，而另一些单元则不会。因此，给每个单元分配一个权重来表示遮挡对座椅状态识别的影响。通过提取所有单元的HOG特征，对遮挡的空座和非空座进行分类。不同的单元分类器的精度不同，反映的是遮挡不同位置对结果的影响不同，这也被成为单元的权重。因此S-HOG特征可以被描述为：</p>
+<p>$ f_S-HOG = {w_1f_1, w_2f_2, · · · , w_{M∗N} f_{M∗N} } $  (3)</p>
+<p>其中$M$、$N$为$x$、$y$方向的单元数，$f_i$为单元的HOG特征，$w_i$为细胞平均权重。</p>
+<p>默认情况下，我们使用线性SVM来训练分类器进行检测。</p>
+</blockquote>
+<h2 id="2-3-按时间结果校准"><a href="#2-3-按时间结果校准" class="headerlink" title="2.3 按时间结果校准"></a>2.3 按时间结果校准</h2><blockquote>
+<p>通过从粗到细的空座位检索过程，礼堂中的每个座位都分配了一个标签来表示其状态。但是，由于外部干扰，可能会有一些误差。这些错误是由一些暂时的干扰造成的。例如，人们走过空的座位或经过空的座位。因此，结果校准的目的是纠正座椅的临时错误判断。本文采用一段时间内检测结果的中值滤波进行校正。</p>
+</blockquote>
+</blockquote>
+<hr>
+<h1 id="3-实验结果与应用"><a href="#3-实验结果与应用" class="headerlink" title="3 实验结果与应用"></a>3 实验结果与应用</h1><blockquote>
+<h2 id="3-1-PTZ摄像头设置"><a href="#3-1-PTZ摄像头设置" class="headerlink" title="3.1 PTZ摄像头设置"></a>3.1 PTZ摄像头设置</h2><blockquote>
+<p>考虑到礼堂可容纳数千人，场地面积大，摄像机设置应保证礼堂内所有座位都被遮挡住，所拍摄的图像分辨率高，而使用的摄像机越少越好。工作的(12、13、14),他们采用全方位摄像机可以覆盖360◦实现高覆盖率。这个方案的问题是，随着座椅和相机之间距离的增加，遮挡会变得更加严重。这给座椅检测工作带来了困难。</p>
+<p>一般来说，避免遮挡的最佳拍摄角度是安装在座椅上方。只要相机与座椅之间的距离足够长，座椅的变形和遮挡问题就可以忽略。我们将礼堂分成几个区域，然后为每个PTZ摄像机设置5-6个预设，如图1所示。每个预设值负责一个区域。</p>
+</blockquote>
+<h2 id="3-2-座椅检测结果"><a href="#3-2-座椅检测结果" class="headerlink" title="3.2 座椅检测结果"></a>3.2 座椅检测结果</h2><blockquote>
+<p>座位检测算法适用于可容纳上千人的大型礼堂。从两个会议区域提取的座位块作为训练集，其中包含1982个空座位块和2946个非空座位块。将另一次约1小时的会议视频作为测试集，从该数据集中采集77幅经典图像。对礼堂内随机区域的地面真值进行了标定，验证了算法的有效性。区域覆盖64个座位，每个座位块平均为80 * 100像素。</p>
+<p>本文采用空座位召回率来评价所提出的检测算法。考虑到粗检索过程和细检索过程针对不同类型的空座位进行检索，分别得到了完全空座位和遮挡空座位的查全率。在77*64=4928个座块中，有1259个为完全空座，735个为封闭空座，2934个为非空座。座椅检测结果如表1所示。</p>
+<p>粗检索过程的目的是检索完全空的座位。在此过程中，在HSV颜色空间中实现背景减法，以保证特征对光照变化具有鲁棒性。对于与座椅颜色相同的一些人，使用梯度图的背景减法来捕捉座椅块轮廓的变化。因此，粗检索过程可以回忆起几乎所有完全空的位置，如表1所示。对于剩余座椅，采用精细回收工艺。召回被封闭的空座位的结果也令人满意。针对这两种方法误差较小的情况，采用标定模块对扰动进行滤波。实验结果表明，在标定前，阀座检测精度达到99.73%，标定后，阀座检测精度达到99.87%。系统的最终结果如图5 (a)和(b)所示。</p>
+</blockquote>
+<h2 id="3-3-座椅检测的应用"><a href="#3-3-座椅检测的应用" class="headerlink" title="3.3 座椅检测的应用"></a>3.3 座椅检测的应用</h2><blockquote>
+<p>构建了一种基于座位检测的智能会议系统。该系统结合参会人员信息的提前输入，为参会人员提供会议期间大礼堂的整体情况。该系统在信息自动显示和快速查询两方面满足了人们对智能管理的要求。由于礼堂的管理涉及到所有参会者的管理，所以既要考虑到礼堂的整体情况，又要考虑到每个座位的细节。</p>
+<blockquote>
+<h3 id="3-3-1-大礼堂的整体情况"><a href="#3-3-1-大礼堂的整体情况" class="headerlink" title="3.3.1 大礼堂的整体情况"></a>3.3.1 大礼堂的整体情况</h3><p>为了覆盖大礼堂，系统使用多个PTZ摄像机对大礼堂内的每个区域进行扫描。然后我们把各个区域组合在一起，得到礼堂的整体情况。如图6所示，电子分布图作为全局描述形成。在电子分布图中，礼堂的每个座位都被描述成一个长方形，座位的状态用不同的颜色表示。一旦座位被新入座者或缺席者占据，相应座位的颜色就会发生变化，从而直接反映出礼堂的整体情况。</p>
+<p>随着时间的推移，电子分布图的历史数据被保存下来。任何时候的电子分布图都可以查询。同时，为了方便查找全局的变化，形成了一段时间内的统计量。查询特定的座位或与会者可以快速定位到礼堂的准确位置，如图7所示。</p>
+</blockquote>
+<h3 id="3-3-2-大礼堂的局部情况"><a href="#3-3-2-大礼堂的局部情况" class="headerlink" title="3.3.2 大礼堂的局部情况"></a>3.3.2 大礼堂的局部情况</h3><blockquote>
+<p>局部情况展示是查看礼堂区域的详细信息，如图8所示。视图中的每个参与者的信息都可以被获取，包括姓名、公司、出席时间等。每个与会者和每个座位的当前历史保存为表单<br>统计数据。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4 总结"></a>4 总结</h1><blockquote>
+<p>本文提出了一种以座位状态为核心的实时智能会议管理系统，避免了其他行为分析系统的不足。采用PTZ摄像机代替传统摄像机，可以以更低的成本覆盖整个礼堂。在检测中，通过一种由粗到细的空座椅检索方法，可以准确地获取各个座椅的状态，不受遮挡和严重噪声的干扰。结合座位和参会者的不同，系统可以为用户提供整个会议期间的每个座位和每个参会者的情况。在实际会议上的实验结果验证了所提出的座椅检测系统的有效性。</p>
+</blockquote>
+<hr>
+<h1 id="5-致谢"><a href="#5-致谢" class="headerlink" title="5 致谢"></a>5 致谢</h1><blockquote>
+<p>本课题由国家基础研究计划(批准号:2012cb316302)、国家重点技术研发计划(批准号:2012bah07b01)、国家自然科学基金(61105009)资助。</p>
+</blockquote>
+<hr>
+<h1 id="6-参考文献"><a href="#6-参考文献" class="headerlink" title="6 参考文献"></a>6 参考文献</h1><blockquote>
+<p><a href="../../images/1.png">1</a> Z. Yu and Y. Nakamura, “Smart meeting systems: A<br>survey of state-of-the-art and open issues,” ACM<br>Computing Surveys (CSUR), vol. 42, no. 2, p. 8, 2010.</p>
+<p><a href="../../images/2.png">2</a> M. Bett, R. Gross, H. Yu, X. Zhu, Y. Pan, J. Yang,<br>and A. Waibel, “Multimodal meeting tracker,” in<br>Proceedings of RIAO, 2000.</p>
+<p><a href="../../images/3.png">3</a> I. Mikic, K. Huang, and M. Trivedi, “Activity<br>monitoring and summarization for an intelligent<br>meeting room,” in Human Motion, 2000. Proceedings.<br>Workshop on, pp. 107–112, IEEE, 2000.</p>
+<p><a href="../../images/4.png">4</a> D.-S. Lee, B. Erol, J. Graham, J. J. Hull, and<br>N. Murata, “Portable meeting recorder,” in<br>Proceedings of the tenth ACM international conference<br>on Multimedia, pp. 493–502, ACM, 2002.</p>
+<p><a href="../../images/5.png">5</a> P. Dai, L. Tao, and G. Xu, “Audio-visual fused online<br>context analysis toward smart meeting room,” in<br>Ubiquitous Intelligence and Computing, pp. 868–877,<br>Springer, 2007.</p>
+<p><a href="../../images/6.png">6</a> K. S. Huang and M. M. Trivedi, “Video arrays for<br>real-time tracking of person, head, and face in an<br>intelligent room,” Machine vision and applications,<br>vol. 14, no. 2, pp. 103–111, 2003.</p>
+<p><a href="../../images/7.png">7</a> T. Svoboda, H. Hug, and L. Van Gool, “Viroom ,<br>a llow<br>cost synchronized multicamera system and its<br>self-calibration,” in Pattern Recognition, pp. 515–522,<br>Springer, 2002.</p>
+<p><a href="../../images/8.png">8</a> J. Krumm, S. Harris, B. Meyers, B. Brumitt, M. Hale,<br>and S. Shafer, “Multi-camera multi-person tracking for<br>easyliving,” in Visual Surveillance, 2000. Proceedings.<br>Third IEEE International Workshop on, pp. 3–10,<br>IEEE, 2000.</p>
+<p>[9] P. Dai, L. Tao, and G. Xu, “Dynamic context driven<br>human detection and tracking in meeting scenarios,”<br>in Proc. 2nd Intl. Conf. on Computer Vision Theory<br>and Applications, 2007.</p>
+<p>[10] P. Viola and M. Jones, “Rapid object detection using<br>a boosted cascade of simple features,” in Computer<br>Vision and Pattern Recognition, 2001. CVPR 2001.<br>Proceedings of the 2001 IEEE Computer Society<br>Conference on, vol. 1, pp. I–511, IEEE, 2001.</p>
+<p>[11] H. Liang, J. Wu, and K. Huang, “People in seats<br>counting via seat detection for meeting surveillance,”<br>in Pattern Recognition, pp. 202–210, Springer, 2012.</p>
+<p>[12] Z. Yu, M. Ozeki, Y. Fujii, and Y. Nakamura, “Towards<br>smart meeting: enabling technologies and a real-world<br>application,” in Proceedings of the 9th international<br>conference on Multimodal interfaces, pp. 86–93, ACM, 2007.</p>
+<p>[13] J. S. Garofolo, C. D. Laprun, M. Michel, V. M.<br>Stanford, and E. Tabassi, “The nist meeting room<br>pilot corpus,” in Proc. of Language Resource and<br>Evaluation Conference, 2004.</p>
+<p>[14] C. Busso, S. Hernanz, C.-W. Chu, S.-i. Kwon, S. Lee,<br>P. G. Georgiou, I. Cohen, and S. Narayanan, “Smart<br>room: participant and speaker localization and<br>identification,” in Acoustics, Speech, and Signal<br>Processing, 2005. Proceedings.(ICASSP’05). IEEE<br>International Conference on, vol. 2, pp. ii–1117, IEEE, 2005.</p>
+</blockquote>
+<hr>
+<hr>
+<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><blockquote>
+<p>座位检测 seat-detection<br>实时性 real-time</p>
+</blockquote>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类别和主题描述符"><span class="toc-number">2.</span> <span class="toc-text">类别和主题描述符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关键字"><span class="toc-number">3.</span> <span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-前言"><span class="toc-number">4.</span> <span class="toc-text">1 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-座位检测"><span class="toc-number">5.</span> <span class="toc-text">2 座位检测</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-粗检索过程"><span class="toc-number">5.1.</span> <span class="toc-text">2.1 粗检索过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-细检索过程"><span class="toc-number">5.2.</span> <span class="toc-text">2.2 细检索过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-按时间结果校准"><span class="toc-number">5.3.</span> <span class="toc-text">2.3 按时间结果校准</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-实验结果与应用"><span class="toc-number">6.</span> <span class="toc-text">3 实验结果与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-PTZ摄像头设置"><span class="toc-number">6.1.</span> <span class="toc-text">3.1 PTZ摄像头设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-座椅检测结果"><span class="toc-number">6.2.</span> <span class="toc-text">3.2 座椅检测结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-座椅检测的应用"><span class="toc-number">6.3.</span> <span class="toc-text">3.3 座椅检测的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-大礼堂的整体情况"><span class="toc-number">6.3.1.</span> <span class="toc-text">3.3.1 大礼堂的整体情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-大礼堂的局部情况"><span class="toc-number">6.3.2.</span> <span class="toc-text">3.3.2 大礼堂的局部情况</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-总结"><span class="toc-number">7.</span> <span class="toc-text">4 总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-致谢"><span class="toc-number">8.</span> <span class="toc-text">5 致谢</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-参考文献"><span class="toc-number">9.</span> <span class="toc-text">6 参考文献</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#笔记"><span class="toc-number">10.</span> <span class="toc-text">笔记</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&text=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&is_video=false&description=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）&body=Check out this article: http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&name=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$("#toc-footer").toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$("#share-footer").toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$("#nav-footer").toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 YuanYunjing
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
