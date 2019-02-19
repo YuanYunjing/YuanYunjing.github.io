@@ -15,20 +15,20 @@
 <meta property="og:site_name" content="Orange">
 <meta property="og:description" content="摘要 如今智能会议管理受到人们的广泛关注。现有的大多数智能系统只关注小型会议室中的谈话记录，而本文介绍了一种大礼堂智能会议管理系统。系统中嵌入了级联空座检测算法，以获取每个座位的状态。根据遮挡的程度逐级标示空位情况。结合预先输入的与会者信息，系统可以在会议期间为人们提供就座情况和相应的与会者信息。实验结果表明，座椅状态检测精度可达99.8%。  类别和主题描述符 H.4[图像处理与计算机视觉]:杂">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/images/2.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/images/3.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/images/4.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/images/1.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/images/b1.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/images/5.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/images/6.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/images/7.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/images/8.png">
-<meta property="og:updated_time" content="2019-02-19T11:14:18.484Z">
+<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/images/2.png">
+<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/images/3.png">
+<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/images/4.png">
+<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/images/1.png">
+<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/images/b1.png">
+<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/images/5.png">
+<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/images/6.png">
+<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/images/7.png">
+<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/images/8.png">
+<meta property="og:updated_time" content="2019-02-19T13:08:40.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）">
 <meta name="twitter:description" content="摘要 如今智能会议管理受到人们的广泛关注。现有的大多数智能系统只关注小型会议室中的谈话记录，而本文介绍了一种大礼堂智能会议管理系统。系统中嵌入了级联空座检测算法，以获取每个座位的状态。根据遮挡的程度逐级标示空位情况。结合预先输入的与会者信息，系统可以在会议期间为人们提供就座情况和相应的与会者信息。实验结果表明，座椅状态检测精度可达99.8%。  类别和主题描述符 H.4[图像处理与计算机视觉]:杂">
-<meta name="twitter:image" content="https://yuanyunjing.github.io/2019/02/images/2.png">
+<meta name="twitter:image" content="https://yuanyunjing.github.io/2019/02/19/images/2.png">
     
     
         
@@ -168,11 +168,11 @@
 <hr>
 <h1 id="2-座位检测"><a href="#2-座位检测" class="headerlink" title="2 座位检测"></a>2 座位检测</h1><blockquote>
 <p>本节将详细介绍座椅检测算法。座位检测的任务可以描述为座位是否有人坐的问题。然而，在会议期间，一些座位会被严重的噪音所堵塞，比如包或衣服。在这种情况下，很难发现他们是空座位。针对这一问题，提出了一种三步检测方法。它是建立在一个推进级联的基础上的。其基本思想是，座椅的外观根据遮挡的级别和位置变化很大。事实上，所有的空座在颜色、形状和质地上都表现出高度的一致性。虽然空座位易发生遮挡，但遮挡往往发生在座位侧面，而遮挡的空座位顶部仍保持原有特征。一旦一个座位被与会者占据，这个座位几乎失去了图像中所有的原始外观。因此，我们将座椅分为三种类型:完全空的、遮挡空的和非空的，如图2所示。</p>
-<p><img src="../../images/2.png" alt></p>
+<p><img src="../images/2.png" alt></p>
 </blockquote>
 <blockquote>
 <p>这三个步骤分别是粗检索过程、细检索过程和结果校准。图3所示为提出的回收空座位的升压级联结构。由于外观一致性高，首先对完全空的座椅进行检索，加快了整个过程的速度，这是一个粗糙的检索过程。在此基础上，对闭塞的空座和非空座进行了具有良好特性的分析，以保证系统的精度。这是一个很好的检索过程。</p>
-<p><img src="../../images/3.png" alt></p>
+<p><img src="../images/3.png" alt></p>
 <h2 id="2-1-粗检索过程"><a href="#2-1-粗检索过程" class="headerlink" title="2.1 粗检索过程"></a>2.1 粗检索过程</h2><blockquote>
 <p>粗检索过程的目的是区分完全空的座位、封闭的空的座位和非空的座位。考虑到所有的空位在外观上具有高度的一致性，当一个空位被占据时，其外观变化很大。因此，背景和前景之间的减法迅速增加，可以用来获得座椅的状态。首先建立背景模型。为简单起见，礼堂中没有人时拍摄的视频可以用作背景模型。前景区域是直接获得的实时视频。然后使用背景减法。为了对光照变化具有一定的鲁棒性，在HSV颜色空间和梯度图中实现了背景减法。每个座椅的特点可以描述为:</p>
 <p>$$ f^hsv_i = ∥f^hsv_bg − f^hsv_fg ∥_1 $$ </p>
@@ -184,7 +184,7 @@
 <h2 id="2-2-细检索过程"><a href="#2-2-细检索过程" class="headerlink" title="2.2 细检索过程"></a>2.2 细检索过程</h2><blockquote>
 <p>精细检索过程的目的是区分被遮挡的空座位和非空座位。这是通过对座椅的精细纹理和轮廓分析来实现的。</p>
 <p>HOG特征在很多应用中都被证明是有效的，比如对象检测。考虑到座位被人遮挡和占据时遮挡位置的不同，提出了简化HOG特征(S-HOG)[11]。提取S-HOG的过程如图4所示。</p>
-<p><img src="../../images/4.png" alt></p>
+<p><img src="../images/4.png" alt></p>
 </blockquote>
 </blockquote>
 <blockquote>
@@ -203,27 +203,27 @@
 <h2 id="3-1-PTZ摄像头设置"><a href="#3-1-PTZ摄像头设置" class="headerlink" title="3.1 PTZ摄像头设置"></a>3.1 PTZ摄像头设置</h2><blockquote>
 <p>考虑到礼堂可容纳数千人，场地面积大，摄像机设置应保证礼堂内所有座位都被遮挡住，所拍摄的图像分辨率高，而使用的摄像机越少越好。工作的(12、13、14),他们采用全方位摄像机可以覆盖360◦实现高覆盖率。这个方案的问题是，随着座椅和相机之间距离的增加，遮挡会变得更加严重。这给座椅检测工作带来了困难。</p>
 <p>一般来说，避免遮挡的最佳拍摄角度是安装在座椅上方。只要相机与座椅之间的距离足够长，座椅的变形和遮挡问题就可以忽略。我们将礼堂分成几个区域，然后为每个PTZ摄像机设置5-6个预设，如图1所示。每个预设值负责一个区域。</p>
-<p><img src="../../images/1.png" alt></p>
+<p><img src="../images/1.png" alt></p>
 </blockquote>
 </blockquote>
 <blockquote>
 <h2 id="3-2-座椅检测结果"><a href="#3-2-座椅检测结果" class="headerlink" title="3.2 座椅检测结果"></a>3.2 座椅检测结果</h2><blockquote>
 <p>座位检测算法适用于可容纳上千人的大型礼堂。从两个会议区域提取的座位块作为训练集，其中包含1982个空座位块和2946个非空座位块。将另一次约1小时的会议视频作为测试集，从该数据集中采集77幅经典图像。对礼堂内随机区域的地面真值进行了标定，验证了算法的有效性。区域覆盖64个座位，每个座位块平均为80 * 100像素。</p>
 <p>本文采用空座位召回率来评价所提出的检测算法。考虑到粗检索过程和细检索过程针对不同类型的空座位进行检索，分别得到了完全空座位和遮挡空座位的查全率。在77*64=4928个座块中，有1259个为完全空座，735个为封闭空座，2934个为非空座。座椅检测结果如表1所示。</p>
-<p><img src="../../images/b1.png" alt></p>
+<p><img src="../images/b1.png" alt></p>
 <p>粗检索过程的目的是检索完全空的座位。在此过程中，在HSV颜色空间中实现背景减法，以保证特征对光照变化具有鲁棒性。对于与座椅颜色相同的一些人，使用梯度图的背景减法来捕捉座椅块轮廓的变化。因此，粗检索过程可以回忆起几乎所有完全空的位置，如表1所示。对于剩余座椅，采用精细回收工艺。召回被封闭的空座位的结果也令人满意。针对这两种方法误差较小的情况，采用标定模块对扰动进行滤波。实验结果表明，在标定前，阀座检测精度达到99.73%，标定后，阀座检测精度达到99.87%。系统的最终结果如图5 (a)和(b)所示。</p>
-<p><img src="../../images/5.png" alt></p>
+<p><img src="../images/5.png" alt></p>
 </blockquote>
 <h2 id="3-3-座椅检测的应用"><a href="#3-3-座椅检测的应用" class="headerlink" title="3.3 座椅检测的应用"></a>3.3 座椅检测的应用</h2><blockquote>
 <p>构建了一种基于座位检测的智能会议系统。该系统结合参会人员信息的提前输入，为参会人员提供会议期间大礼堂的整体情况。该系统在信息自动显示和快速查询两方面满足了人们对智能管理的要求。由于礼堂的管理涉及到所有参会者的管理，所以既要考虑到礼堂的整体情况，又要考虑到每个座位的细节。</p>
 <h3 id="3-3-1-大礼堂的整体情况"><a href="#3-3-1-大礼堂的整体情况" class="headerlink" title="3.3.1 大礼堂的整体情况"></a>3.3.1 大礼堂的整体情况</h3><blockquote>
 <p>为了覆盖大礼堂，系统使用多个PTZ摄像机对大礼堂内的每个区域进行扫描。然后我们把各个区域组合在一起，得到礼堂的整体情况。如图6所示，电子分布图作为全局描述形成。在电子分布图中，礼堂的每个座位都被描述成一个长方形，座位的状态用不同的颜色表示。一旦座位被新入座者或缺席者占据，相应座位的颜色就会发生变化，从而直接反映出礼堂的整体情况。</p>
-<p><img src="../../images/6.png" alt></p>
+<p><img src="../images/6.png" alt></p>
 <p>随着时间的推移，电子分布图的历史数据被保存下来。任何时候的电子分布图都可以查询。同时，为了方便查找全局的变化，形成了一段时间内的统计量。查询特定的座位或与会者可以快速定位到礼堂的准确位置，如图7所示。</p>
-<p><img src="../../images/7.png" alt></p>
+<p><img src="../images/7.png" alt></p>
 </blockquote>
 <h3 id="3-3-2-大礼堂的局部情况"><a href="#3-3-2-大礼堂的局部情况" class="headerlink" title="3.3.2 大礼堂的局部情况"></a>3.3.2 大礼堂的局部情况</h3><blockquote>
-<p>局部情况展示是查看礼堂区域的详细信息，如图8所示。视图中的每个参与者的信息都可以被获取，包括姓名、公司、出席时间等。每个与会者和每个座位的当前历史保存为表单<br>统计数据。<br><img src="../../images/8.png" alt></p>
+<p>局部情况展示是查看礼堂区域的详细信息，如图8所示。视图中的每个参与者的信息都可以被获取，包括姓名、公司、出席时间等。每个与会者和每个座位的当前历史保存为表单<br>统计数据。<br><img src="../images/8.png" alt></p>
 </blockquote>
 </blockquote>
 </blockquote>
