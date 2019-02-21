@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google-site-verification" content="0iCvvQdkj22uvmbGu8W0ra3fuCEXLbU5kVCNNCrDNOE">
+    <meta name="description" content="基础篇 面向对象特征  封装 给对象提供了隐藏内部特性和行为的能力封装的一些好处： 通过隐藏对象的属性来保护对象内部的状态提高了代码的可用性和可维护性，因为对象的行为可以被单独的改变或者是扩展禁止对象之间的不良交互提高模块化   继承  继承给对象提供了从基类获取字段和方法的能力提高了代码的重用性，也可以在不修改类的情况下给现存的类添加新特性   多态  多态存在的必要条件：继承、重写、父类引用指">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础复习">
+<meta property="og:url" content="https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/index.html">
+<meta property="og:site_name" content="Orange">
+<meta property="og:description" content="基础篇 面向对象特征  封装 给对象提供了隐藏内部特性和行为的能力封装的一些好处： 通过隐藏对象的属性来保护对象内部的状态提高了代码的可用性和可维护性，因为对象的行为可以被单独的改变或者是扩展禁止对象之间的不良交互提高模块化   继承  继承给对象提供了从基类获取字段和方法的能力提高了代码的重用性，也可以在不修改类的情况下给现存的类添加新特性   多态  多态存在的必要条件：继承、重写、父类引用指">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/16342c734014a933.png">
+<meta property="og:updated_time" content="2019-02-20T15:12:34.080Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础复习">
+<meta name="twitter:description" content="基础篇 面向对象特征  封装 给对象提供了隐藏内部特性和行为的能力封装的一些好处： 通过隐藏对象的属性来保护对象内部的状态提高了代码的可用性和可维护性，因为对象的行为可以被单独的改变或者是扩展禁止对象之间的不良交互提高模块化   继承  继承给对象提供了从基类获取字段和方法的能力提高了代码的重用性，也可以在不修改类的情况下给现存的类添加新特性   多态  多态存在的必要条件：继承、重写、父类引用指">
+<meta name="twitter:image" content="https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/16342c734014a933.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Java基础复习</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$("#i-top").toggle();" onmouseout="$("#i-top").toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$("#i-share").toggle();" onmouseout="$("#i-share").toggle();" onclick="$("#share").toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&text=Java基础复习"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&title=Java基础复习"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&is_video=false&description=Java基础复习"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Java基础复习&body=Check out this article: https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&title=Java基础复习"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&title=Java基础复习"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&title=Java基础复习"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&title=Java基础复习"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&name=Java基础复习&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础篇"><span class="toc-number">1.</span> <span class="toc-text">基础篇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象特征"><span class="toc-number">1.1.</span> <span class="toc-text">面向对象特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final-finally-finalize"><span class="toc-number">1.2.</span> <span class="toc-text">final, finally, finalize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#int和integer有什么区别"><span class="toc-number">1.3.</span> <span class="toc-text">int和integer有什么区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重载和重写的区别"><span class="toc-number">1.4.</span> <span class="toc-text">重载和重写的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类和接口有什么区别"><span class="toc-number">1.5.</span> <span class="toc-text">抽象类和接口有什么区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反射的用途及实现"><span class="toc-number">1.6.</span> <span class="toc-text">反射的用途及实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义注解的场景及实现"><span class="toc-number">1.7.</span> <span class="toc-text">自定义注解的场景及实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP请求的GET和POST方式的区别"><span class="toc-number">1.8.</span> <span class="toc-text">HTTP请求的GET和POST方式的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session与cookie区别"><span class="toc-number">1.9.</span> <span class="toc-text">session与cookie区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC流程"><span class="toc-number">1.10.</span> <span class="toc-text">JDBC流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MVC设计思想"><span class="toc-number">2.</span> <span class="toc-text">MVC设计思想</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#集合"><span class="toc-number">3.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#List和Set区别"><span class="toc-number">3.1.</span> <span class="toc-text">List和Set区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List和Set区别-1"><span class="toc-number">3.2.</span> <span class="toc-text">List和Set区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList与LinkedList区别"><span class="toc-number">3.3.</span> <span class="toc-text">ArrayList与LinkedList区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList与Vector区别"><span class="toc-number">3.4.</span> <span class="toc-text">ArrayList与Vector区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap与Hashtable区别"><span class="toc-number">3.5.</span> <span class="toc-text">HashMap与Hashtable区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashSet与HashMap区别"><span class="toc-number">3.6.</span> <span class="toc-text">HashSet与HashMap区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap与ConcurrentHashMap区别"><span class="toc-number">3.7.</span> <span class="toc-text">HashMap与ConcurrentHashMap区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap的工作原理及代码实现"><span class="toc-number">3.8.</span> <span class="toc-text">HashMap的工作原理及代码实现</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#线程"><span class="toc-number">4.</span> <span class="toc-text">线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建线程的方式及实现"><span class="toc-number">4.1.</span> <span class="toc-text">创建线程的方式及实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sleep-、join-、yield-有什么区别"><span class="toc-number">4.2.</span> <span class="toc-text">sleep()、join()、yield()有什么区别</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Java基础复习
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Orange</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2019-02-19T14:36:14.000Z" itemprop="datePublished">2019-02-19</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Java/">Java</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><blockquote>
+<h2 id="面向对象特征"><a href="#面向对象特征" class="headerlink" title="面向对象特征"></a>面向对象特征</h2><blockquote>
+<ul>
+<li>封装 给对象提供了隐藏内部特性和行为的能力<br>封装的一些好处：<blockquote>
+<p>通过隐藏对象的属性来保护对象内部的状态<br>提高了代码的可用性和可维护性，因为对象的行为可以被单独的改变或者是扩展<br>禁止对象之间的不良交互提高模块化</p>
+</blockquote>
+</li>
+<li>继承 <blockquote>
+<p>继承给对象提供了从基类获取字段和方法的能力<br>提高了代码的重用性，也可以在不修改类的情况下给现存的类添加新特性</p>
+</blockquote>
+</li>
+<li>多态 <blockquote>
+<p>多态存在的必要条件：<br>继承、重写、父类引用指向子类对象<br>多态的实现方式：<br>重写、接口、抽象类和抽象方法<br>多态的好处：<br>可以使程序有良好的扩展，并可以对所有类的对象进行通用处理</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="final-finally-finalize"><a href="#final-finally-finalize" class="headerlink" title="final, finally, finalize"></a>final, finally, finalize</h2><blockquote>
+<ul>
+<li>final修饰符（关键字）<blockquote>
+<p>如果一个类被声明为final，意味着它不能再派生出新的子类，不能作为父类被继承。（因此一个类不能既被声明为abstract的，有被声明为final的）。<br>将变量或方法声明为final，可以保证他们在使用中不被改变。（被声明为final的变量必须在声明时给定初值，而在以后的引用中只能读取，不可修改。）<br>被声明为final的方法也同样只能使用，不能重载（？）</p>
+</blockquote>
+</li>
+<li>finally<blockquote>
+<p>在异常处理时提供finally块来执行任何清除操作。如果抛出一个异常，那么相匹配的catch子句就会执行，然后控制就会进入finally块（如果有的话）。</p>
+</blockquote>
+</li>
+<li>finalize 方法名<blockquote>
+<p>Java技术允许finalize()在垃圾收集器讲对象从内存清理出去之前做必要的垃圾清理工作。这个方法是由垃圾处理器在确定这个对象没有被引用是对这个对象调用的。实在Object类中定义的，因此所有的类都继承了他。子类覆盖finalize()方法以整理系统资源或者执行其他清理工作。<br>finalize()方法是在垃圾收集器删除对象之前对这个对象调用的（不理解？）</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="int和integer有什么区别"><a href="#int和integer有什么区别" class="headerlink" title="int和integer有什么区别"></a>int和integer有什么区别</h2><blockquote>
+<p>int是基本数据类型<br>Integer是其包装类，（是一个类）<br>为什么要提供包装类呢？</p>
+<blockquote>
+<p>一是为了在各种类型间转化，如int转化为String<br>‘’’<br>int a = 0;<br>String result = Integer.toString(a);<br>‘’’</p>
+<p>二是泛型</p>
+</blockquote>
+</blockquote>
+<h2 id="重载和重写的区别"><a href="#重载和重写的区别" class="headerlink" title="重载和重写的区别"></a>重载和重写的区别</h2><blockquote>
+<ul>
+<li>override（重写）<br>方法名、参数、返回值相同<br>子类方法不能缩小父类方法的访问权限<br>子类方法不能抛出比父类方法更多的异常（但子类方法可以不抛出异常）<br>存在于父类和子类之间<br>方法被定义为final不能被重写</li>
+<li>overload（重载）<br>参数类型、个数、顺序至少有一个不相同<br>不能重载只有返回值不同的方法名<br>存在于父类和子类、同类中（？）<br><img src="/2019/02/19/JAVA基础复习/16342c734014a933.png" alt></li>
+</ul>
+</blockquote>
+<h2 id="抽象类和接口有什么区别"><a href="#抽象类和接口有什么区别" class="headerlink" title="抽象类和接口有什么区别"></a>抽象类和接口有什么区别</h2><blockquote>
+<p>接口是公开的，里面不能有私有的方法或变量，是用于让别人使用的，而抽象类是可以有私有方法或私有变量的<br>另外，实现接口的一定要实现接口里所有的方法，而实现抽象类可以有选择的<strong>重写</strong>需要用到的方法<br>一般的应用里，最顶级的是接口，然后是抽象类实现接口，最后才到具体类实现<br>还有，接口可以实现多重继承，而一个类只能继承一个超类，但可以通过继承多个接口实现多重继承，接口还有标识（里面没有任何方法，如Remote接口）和数据共享（里面的变量全是常量）的作用。</p>
+</blockquote>
+<h2 id="反射的用途及实现"><a href="#反射的用途及实现" class="headerlink" title="反射的用途及实现"></a>反射的用途及实现</h2><blockquote>
+<p>Java反射机制主要提供了以下功能：在运行时构造一个类的对象；判断一个类所具有的成员变量和方法；调用一个对象的方法；生成动态代理。反射最大的作用就是框架。<br>Java反射的主要功能：</p>
+<ul>
+<li>确定一个对象的类</li>
+<li>取出类的modifiers、数据成员、方法、构造器和超类</li>
+<li>找出某个接口里定义的常量和方法说明</li>
+<li>创建一个类实例，这个实例在运行时才有名字（运行时才生成的对象）</li>
+<li>取得和设定对象数据成员的值，如果数据成员名是运行时刻确定的也能做到</li>
+<li>在运行时刻调用动态对象的方法</li>
+<li>创建数组，数组大小和类型在运行时刻才确定，也能更改数组成员的值</li>
+<li>反射的应用很多，很多框架都有用到</li>
+</ul>
+</blockquote>
+</blockquote>
+<p>spring 的 ioc/di 也是反射….<br>javaBean和jsp之间调用也是反射….<br>struts的 FormBean 和页面之间…也是通过反射调用….<br>JDBC 的 classForName()也是反射…..<br>hibernate的 find(Class clazz) 也是反射….<br>“<br>反射还有一个不得不说的问题，就是性能问题，大量使用反射系统性能大打折扣。怎么使用使你的系统达到最优就看你系统架构和综合使用问题啦，这里就不多说了。”</p>
+<blockquote>
+<h2 id="自定义注解的场景及实现"><a href="#自定义注解的场景及实现" class="headerlink" title="自定义注解的场景及实现"></a>自定义注解的场景及实现</h2><blockquote>
+<p>待理解！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！</p>
+</blockquote>
+<h2 id="HTTP请求的GET和POST方式的区别"><a href="#HTTP请求的GET和POST方式的区别" class="headerlink" title="HTTP请求的GET和POST方式的区别"></a>HTTP请求的GET和POST方式的区别</h2><blockquote>
+<ul>
+<li>GET方法会把名值对追加在请求的URL后面。因为URL对字符数目有限制，进而限制了用在客户端请求的参数值的数目。并且请求中的参数值是可见的，因此，敏感信息不能用这种方式传递。</li>
+<li>POST方法通过把请求参数值放在请求体（请求体是什么）中来克服GET方法的限制，因此可以发送的参数的数目是没有限制的。最后，通过POST请求传递的敏感信息对外部客户端是不可见的。</li>
+</ul>
+</blockquote>
+<h2 id="session与cookie区别"><a href="#session与cookie区别" class="headerlink" title="session与cookie区别"></a>session与cookie区别</h2><blockquote>
+<p>cookie是Web服务器发送给浏览器的一块信息。浏览器会在本地文件中给每一个Web服务器存储cookie。以后浏览器在给特定的web服务器发请求的时候，同时会发送所有为该服务器存储的cookie。<br>session与cookie区别：（来自知乎:冯特罗<br><a href="https://www.zhihu.com/question/19786827）" target="_blank" rel="noopener">https://www.zhihu.com/question/19786827）</a><br>session在服务器端，cookie在客户端（浏览器）<br>session默认被存在服务器的一个文件里（不是内存）<br>session的运行依赖sessionID，而sessionID是存在cookie中的，也就是说如果禁用cookie，session也会失效（但可通过其他方式实现，如URL中传递session_id）<br>session可以放在文件、数据库或内存中都可以<br>用户验证这种场合一般会用session<br>因此，维护一个会话的核心就是客户端的唯一标识，即sessionID</p>
+</blockquote>
+<h2 id="JDBC流程"><a href="#JDBC流程" class="headerlink" title="JDBC流程"></a>JDBC流程</h2><blockquote>
+<ol>
+<li>加载JDBC程序驱动：<blockquote>
+<p>在连接数据库之前，首先要加载想要连接的数据库的驱动到JVM（Java虚拟机），<br>这通过java.lang.Class类的静态方法forName(String className)实现。如：<br>‘’’<br>try{<br>//加载MySql的驱动类<br>Class.forName(“com.mysql.jdbc.Driver”) ;<br>}catch(ClassNotFoundException e){<br>System.out.println(“找不到驱动程序类 ，加载驱动失败！”);<br>e.printStackTrace() ;<br>}<br>‘’’<br>成功加载后，会将Driver类的实例注册到DriverManager类中。</p>
+</blockquote>
+</li>
+<li>提供JDBC连接的URL<br>成功加载后，会将Driver类的实例注册到DriverManager类中。<blockquote>
+<ul>
+<li>连接URL定义了连接数据库时的协议、子协议、数据源标识</li>
+<li>书写形式：协议：子协议：数据源标识<br>协议：在JDBC中总是以jdbc开始 子协议：是桥连接的驱动程序或是数据库管理系统名称。数据源标识：标记找到数据库来源的地址与连接端口。<br>例如：<br>jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=gbk;useUnicode=true;（MySql的连接URL）<br>表示使用Unicode字符集。如果characterEncoding设置为 gb2312或GBK，本参数必须设置为true 。characterEncoding=gbk：字符编码方式。</li>
+</ul>
+</blockquote>
+</li>
+<li>创建数据库的连接<blockquote>
+<ul>
+<li>要连接数据库，需要向java.sql.DriverManager请求并获得Connection对象， 该对象就代表一个数据库的连接。</li>
+<li>使用DriverManager的getConnectin(String url , String username , String password )方法传入指定的欲连接的数据库的路径、数据库的用户名和 密码来获得。<br>如：<br>‘’’<br>String url = “jdbc:mysql://localhost:3306/test” ;<br>String username = “root” ;<br>String password = “root” ;<br>try{<br>Connection con = DriverManager.getConnection(url , username , password ) ;<br>}catch(SQLException se){<br>System.out.println(“数据库连接失败！”);<br>se.printStackTrace() ;<br>}<br>‘’’ </li>
+</ul>
+</blockquote>
+</li>
+<li>创建一个Statement<blockquote>
+<ul>
+<li>要执行SQL语句，必须获得java.sql.Statement实例，Statement实例分为以下3 种类型：<br>1、执行静态SQL语句。通常通过Statement实例实现。<br>2、执行动态SQL语句。通常通过PreparedStatement实例实现。<br>3、执行数据库存储过程。通常通过CallableStatement实例实现。<br>具体的实现方式：<br>Statement stmt = con.createStatement() ;<br>PreparedStatement pstmt = con.prepareStatement(sql) ;<br>CallableStatement cstmt = con.prepareCall(“{CALL demoSp(? , ?)}”) ;</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ol start="5">
+<li>执行SQL语句<blockquote>
+<p>Statement接口提供了三种执行SQL语句的方法：executeQuery 、executeUpdate 和execute<br>1、ResultSet executeQuery(String sqlString)：执行查询数据库的SQL语句 ，返回一个结果集（ResultSet）对象。<br>2、int executeUpdate(String sqlString)：用于执行INSERT、UPDATE或 DELETE语句以及SQL DDL语句，如：CREATE TABLE和DROP TABLE等<br>3、execute(sqlString):用于执行返回多个结果集、多个更新计数或二者组合的 语句。 具体实现的代码：<br>‘’’<br>ResultSet rs = stmt.executeQuery(“SELECT * FROM …”) ;<br>int rows = stmt.executeUpdate(“INSERT INTO …”) ;<br>boolean flag = stmt.execute(String sql) ;<br>‘’’</p>
+</blockquote>
+</li>
+<li>处理结果<blockquote>
+<p>两种情况：<br>1、执行更新返回的是本次操作影响到的记录数。<br>2、执行查询返回的结果是一个ResultSet对象。<br>• ResultSet包含符合SQL语句中条件的所有行，并且它通过一套get方法提供了对这些 行中数据的访问。<br>• 使用结果集（ResultSet）对象的访问方法获取数据：<br>‘’’<br>while(rs.next()){<br>String name = rs.getString(“name”) ;<br>String pass = rs.getString(1) ; // 此方法比较高效<br>}<br>（列是从左到右编号的，并且从列1开始）<br>‘’’</p>
+</blockquote>
+</li>
+<li>关闭JDBC对象<blockquote>
+<p>操作完成以后要把所有使用的JDBC对象全都关闭，以释放JDBC资源，关闭顺序和声 明顺序相反：<br>1、关闭记录集<br>2、关闭声明<br>3、关闭连接对象<br>‘’’<br>if(rs != null){ // 关闭记录集<br> try{<br>   rs.close() ;<br> }catch(SQLException e){<br>   e.printStackTrace() ;<br> }<br>}<br>if(stmt != null){ // 关闭声明<br> try{<br>   stmt.close() ;<br> }catch(SQLException e){<br>   e.printStackTrace() ;<br> }<br>}<br>if(conn != null){ // 关闭连接对象<br> try{<br>   conn.close() ;<br> }catch(SQLException e){<br>   e.printStackTrace() ;<br> }<br>}<br>‘’’</p>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+<h1 id="MVC设计思想"><a href="#MVC设计思想" class="headerlink" title="MVC设计思想"></a>MVC设计思想</h1><blockquote>
+</blockquote>
+<p>equals与==的区别</p>
+</blockquote>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><blockquote>
+<h2 id="List和Set区别"><a href="#List和Set区别" class="headerlink" title="List和Set区别"></a>List和Set区别</h2><h2 id="List和Set区别-1"><a href="#List和Set区别-1" class="headerlink" title="List和Set区别"></a>List和Set区别</h2><h2 id="ArrayList与LinkedList区别"><a href="#ArrayList与LinkedList区别" class="headerlink" title="ArrayList与LinkedList区别"></a>ArrayList与LinkedList区别</h2><blockquote>
+<ul>
+<li>ArrayList</li>
+<li>LinkedList</li>
+<li>使用场景分析</li>
+</ul>
+</blockquote>
+<h2 id="ArrayList与Vector区别"><a href="#ArrayList与Vector区别" class="headerlink" title="ArrayList与Vector区别"></a>ArrayList与Vector区别</h2><h2 id="HashMap与Hashtable区别"><a href="#HashMap与Hashtable区别" class="headerlink" title="HashMap与Hashtable区别"></a>HashMap与Hashtable区别</h2><h2 id="HashSet与HashMap区别"><a href="#HashSet与HashMap区别" class="headerlink" title="HashSet与HashMap区别"></a>HashSet与HashMap区别</h2><h2 id="HashMap与ConcurrentHashMap区别"><a href="#HashMap与ConcurrentHashMap区别" class="headerlink" title="HashMap与ConcurrentHashMap区别"></a>HashMap与ConcurrentHashMap区别</h2><h2 id="HashMap的工作原理及代码实现"><a href="#HashMap的工作原理及代码实现" class="headerlink" title="HashMap的工作原理及代码实现"></a>HashMap的工作原理及代码实现</h2><p>ConcurrentHashMap的工作原理及代码实现</p>
+</blockquote>
+<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><blockquote>
+<h2 id="创建线程的方式及实现"><a href="#创建线程的方式及实现" class="headerlink" title="创建线程的方式及实现"></a>创建线程的方式及实现</h2><h2 id="sleep-、join-、yield-有什么区别"><a href="#sleep-、join-、yield-有什么区别" class="headerlink" title="sleep()、join()、yield()有什么区别"></a>sleep()、join()、yield()有什么区别</h2><p>……</p>
+</blockquote>
+<blockquote>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+</blockquote>
+<p>hashMap的扩容原理，初始有13个，要怎么new？(达到了负载因子，直接手动&gt;&gt;1)<br>Integer的常量缓存池的问题(-127~128范围有个cache)<br>ConcurrentHashMap的size()怎么做的（并没有完全加锁，而是先乐观的认为不会有写，通过modCount判断是否更改，这个我当时记不清就用了很多可能、大概、应该这种词，事实证明直接说不清楚会更好）<br>Spring的AOP关于拦截private方法一些问题.(细节忘记了，当时答得也不好)<br>项目中数据字典怎么做的缓存，如何做的通信，有没有用什么模块。（说了自己的做法，用的全局的HashMap，然后他会延伸到高并发的场景，分布式缓存怎么做等等，由于没实际操作经验提前也没准备，并且还没有直接说不会，又是用很多模棱两可的语句答得）<br>讲讲你的论文相关的模型吧（这个其实在简历上根本没写，只是写了数学建模的奖，然后面试官就开始问机器学习的算法，很多都是我没准备的，并且我心想我投的也不是算法岗啊。。。所以说对于简历上的每一条一定要熟悉，做足准备，并且遇到简历上没有都扯到的方面，要想办法转移，不要在这耗着）<br>讲完算法的问题，面试官很尴尬的说了句，你这自己的研究方向你都搞不清楚吗？我当时预感就差不多走远了。。。</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>讲讲项目中怎么实现的充值，锁的机制和事务注解，如何保证了事务的一致性。<br>spring层面做事务和数据库层面做的区别，各自实现方式。<br>聊了事务的传播性和隔离级别，问了mysql的默认隔离级别（可重复读）<br>spring中事务传播性怎么配置（xml方式和注解方式，还有关于savepoint的使用）<br>算法：O(1)删除执行链表结点，做分析（其实是要指出剑指offer中那个直接copy值的方法的缺陷和隐患）<br>算法：二叉树的最长距离（递归的思想）</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>聊项目（这次是针对项目中的加密算法和安全性做了阐述，大概20分钟吧，之前爬虫那个例子已经说了项目亮点要怎么准备了，这里我就不多说了）<br>详细聊了聊spring的IOC和AOP思想<br>关于AOP在spring的应用（比如事务，通知，aspectJ，slf4j的原理,和log4j的对比）<br>关于jdk代理和cglib第三方代理（说出对接口代理和子类继承的区别）<br>用的什么数据库，Mysql。<br>最大的数据量多大，用了索引没有，怎么用的（聊了前缀索引，对于varchar类型的值，又聊了聊char，varchar，text，blob的关系和区别）。<br>为什么索引不能随便用，什么时候用（什么时候失效，什么时候最高效）。<br>如何达到索引开销和性能的平衡，用了一个表去举例。（方法就是，根据情境看经常做的查询是哪些，然后依次是什么查询条件，保证最高效索引的同时，也保证索引不失效，避免无效开销，并且根据show profile和explain功能进行对比分析）<br>数据库用了缓存没有，讲讲redis的理解（用作缓存，队列，也可做存储）。<br>redis是单线程还是多线程的，举个例子（做计数器，rank排行榜）<br>讲讲hbase的原理，CloumnFamily包含哪些，region什么情况做分割，对于版本号这个第四维度的使用方式（一般默认三个版本）等等<br>让我等消息，说经理会联系我。</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>讲了讲项目的设计，包括异常的处理，数据库设计，通信模型的设计。<br>讲讲你理解的JVM吧（从内存划分说到了GC算法、分代思想，CMS和G1 collector，到类加载模型，tomcat的非双亲委派、线程上下文加载器，到JVM调优的策略，gc参数设置策略，如何找死锁，读快照，发现内存泄漏等等吧）</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>线程进程区别<br>说下资源方面的区别，共享，不共享<br>共享的具体哪些资源<br>jvm内存模型<br>堆区的特点<br>数据库左连接右连接，场景<br>给200个200个数的数组，找到最大的200个<br>git 常用的操作，git rebase和git merge区别<br>分布式数据库怎么调用<br>linux常用命令，查看内存，查看磁盘使用率</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>说下jvm吧你知道的，中间会问<br>jvm详细如下<br>如何防止内存泄露，哪些会容易造成<br>jvm调优如何检查内存泄露，如何优化gc参数<br>写sql 查询带日期多次考试成绩表中，每个学生的每门课最高成绩，日期要准确<br>分别用having子句写和用子查询写<br>写代码 旋转数组中查找某一个值</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>hashmap底层结构画一下，手写代码做一个url解析器，用正则方式和hashMap的数据结构。<br>识别2的n次方，写个函数。（最快的是用位操作，大家应该都知道n&amp;(n-1)可以去掉二进制最右的1，那2的n次幂&amp;之后便为0）<br>自己实现http response响应头的结构及解析，用buffer（写个伪代码）<br>resp头中都有什么（主要考察http相关知识）<br>海量数据找到出现次数最多的100个（内存不足的时候可以先做hash分片，最后多路merge，每次操作可以用hashMap计数，也可以自己做hash函数计数）<br>redis底层实现，zset数据结构（问到了SkipList跳表这种结构）<br>jvm内存模型，分代，cpu100% 怎么排查（我以为问Jconsole的使用，其实是想问linux性能监测和调优）<br>用int值表示ip如何做（刚好32位bit一对一映射），写个伪代码做transfer<br>nio模型说一下<br>selector中的wakeup什么含义（这个答得不是很好）<br>select poll epoll （linux内核相关的知识）<br>arraylist.sort怎么实现的（这个可以看看TimSort的思想）<br>怎么看待java跟c++（说下区别和自己的感受）</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>100亿个数找最大1000个（说了分片，用堆，再归并）<br>问你确定吗？（我一想是最大的1000个不是出现次数最多的，其实是可以顺序读取，还是用堆实现）<br>有什么缺点，分布不均匀（说一下堆的复杂度由来）<br>有没有其他思路（用hash散列，计数排序）<br>这个更慢，还有更快的吗（我心想我平时就都是答得堆啊，怎么这次还有更快的？）<br>然后讲了基于partition的划分思想（找到第k个开始partition，在左边就在右面递归，在右面就在左边递归，最后确定partition出最大的k个）<br>这种思想了解了，但最坏情况太差，不稳定，还有更快的吗<br>是不是要用概率统计学，抽样估计？<br>说下思想。。<br>不够精确，还有又精确又稳定的吗？<br>。。。<br>那又给你一个数，你怎么快速告诉我是不是在这100亿个数中？<br>这个我知道有可能是想问Bloom Filter，但是具体到hash函数去几个怎么算，怎么判断误差等细节，我也记不太清了，就说了说思想。</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>一个进程最多申请多大空间（看机器cpu的处理位数看情况）‘<br>怎么保证进程间数据的安全？线程呢？<br>安全方面有没有做过一些研究？<br>登录验证怎么做的，为什么用md5，有没有改进（+salt使md5库难解出），微信用的什么方式你知道吗？你想想应该用什么方式？（这里可能是问SSO单点登录的原理吧，可以讲讲SSO JWT token等技术的原理，这个也是我实习之后了解到的，当时答得一般）<br>那说到通信安全，怎么保证http的安全性，幂等性，回调同一个会话怎么标识不同请求，不同会话怎么区分（这个每个问题都画图叙述了下）<br>TCP 3次握手和timewait讲一下原理<br>讲一下滑动窗口，饱和了怎么处理<br>http安全吗?https说一下？<br>get和post请求<br>linux怎么查看网络状态（vmstat）<br>查看udp的性能，udp端口多少，什么时候用udp？<br>为什么tcp不行？<br>qq里哪些用的tcp哪些用udp？分别针对每种情况说一下为什么？</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>说说你对现有Web开发框架的理解（从各个层入手横向对比优缺点，印象中说了SpringMVC和Struts，mybatis和hibernate及jpa）<br>mybatis和hibernate各自的缓存原理和比较，hibernate的一级二级和查询缓存，还有针对缓存的miss率，置换策略，容量设置和性能的平衡问了自己的理解。<br>要你设计的话，如何实现一个线程池(就讲线程池的原理，从初始线程数，核心线程数，然后到任务队列，满了继续到最大线程数，再满了到饱和策略handler，饱和策略一般有哪几种，基本上要理解ThreadPoolExcuter的构造方法那几个参数)<br>synchronized关键字，实现原理（和Lock对比着说，说到各自的优缺点，synchronized从最初性能差到jdk高版本后的锁膨胀机制，大大提高性能，再说底层实现，Lock的乐观锁机制，通过AQS队列同步器，调用了unsafe的CAS操作，CAS函数的参数及意义；同时可以说说synchronized底层原理，jvm层的moniter监视器，对于方法级和代码块级，互斥原理的不同，+1-1可重入的原理等）<br>算法：手写一个ArrayList类，实现add，remove，等基本的方法（主要考扩容的原理和实现，重点写出扩容机制以及扩容时的copy过程）<br>然后让对这个ArrayList进行改进，使之可以应对并发的场景<br>算法：手写字符串的正则匹配，实现*和.的功能，用的递归（写了一半他说时间差不多了，思想大概了解了）。</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>NIO的原理，jdk中有哪些工具和类去实现，如何实现（selector和channel的用法）,真的好用吗？还可以用什么？（面试官应该是想问netty，因为没有实际用过，只能给他讲了netty的原理）<br>那来说说AIO吧，和NIO什么区别（对异步的理解）,AIO在工程中如何实现的？（大概说了下ajax的回调函数），又问回调函数具体是怎么实现的（传递函数指针）。<br>然后借着异步IO想问消息队列，讲了一下几种模型和原理。（面试中没有用过没关系，只要你懂原理还是可以跟面试官讲，起码可以证明你是爱学习的）<br>项目中非技术上的困难（和甲方沟通需求，没有规范化的项目设计，需求变更太频繁等），问了我解决的方法还有以后希望怎么改进。（变相问互联网公司里面各个team以及需求方是如何合作和分工的）<br>讲讲Spring中怎么对初始化的bean做其他操作。（这里有三种方式，@PostConstruct注解方式，init-method的XML配置方式，InitializingBean接口方式）<br>三种实现上有什么区别（还好看过点源码，其实前两种是一个意思，都是通过反射的方式用aop思想实现，可以消除对spring的依赖；接口方式是直接调用afterPropertiesSet方法，效率更高点。spring加载bean时先判断接口方式，再执行配置注解方式）<br>算法题，一个先减后增的数组，查找目标值。（这里并不是查找最值，也不是剑指offer上的旋转数组，但是思想上也可以用二分的方式）<br>算法题，两个大数求和，要按高到低位的输入，实时输出结果的对应位，空间O，时间O(n)，不借助工具类。（要考虑实时的进位标识，以及多个9之后的连续进位标识）</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>算法：int范围的随机数的阶乘编码实现。<br>（这个题如果直接按最简单的算法题肯定是不行的）<br>1.首先考虑要用字符串做运算(因为中间数太大了，只有String能保存，当然你可以借助BigInteger或BigDecimal类去辅助实现)。<br>2.阶乘直接计算代价太大，循环太多，考虑设计中间缓存。（正常算复杂度太高，本身就是阶乘级的，所以正常想到用时间换空间）<br>3.只用空间换时间的话缓存也不能覆盖全部，如果把所有的中间值保存，空间是eb级别，不现实。（这里就要达到一个空间和时间复杂度的平衡点）<br>4.存部分中间值用部分空间换取时间，达到空间复杂度和时间复杂度的最优平衡。（开始说的二分做分割存储之后改为等间隔做分隔存储，间隔选取多长为好？我觉得要首先确定空间复杂度的接受极限，然后尽可能减小时间复杂度，因为空间复杂度是可以有预估值的，而时间复杂度当然我们是希望约小越好的）</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>解释下iaas.paas.saas和之间的关系，外呼接口和服务怎么调用的。<br>数据库主从备和读写分离原理，ibatis怎么配置。（这个只讲了数据库层面的原理，比如监听线程，主机和从机的同步方式等，但是具体代码层面的配置，由于没亲自做过，就说不太知道。）<br>算法，股票最长增长区间，优化<br>算法，最长递增子序列，一个dp数组一个max数组，最优情况</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>ava基础，从头到尾问了个遍，都是大家准备的，但是也挺深的，包括：<br>hashMap，红黑树处理冲突，jdk7和jdk8有什么区别<br>JUC相关的集合，ConcurrentHashMap jdk7和jdk8的区别，Collections.sort函数jdk7 和 jdk8 分别怎么实现的。（总感觉这个面试官在某段时间肯定纠结过两个版本）<br>CopyOnWriteList底层是什么，适用的情况，vector的特点，实现的是List接口吗。<br>并发的问题，线程间通信三种方式<br>锁的膨胀过程，Synchronized和Lock的区别，底层的monitor实现和unsafe类的CAS函数，参数表示什么，寄存器cpu如何做）<br>volatile cpu和寄存器层面是怎么实现的。<br>线程池构造函数参数，各种类型的预设池各自的特点，ForkJoinPool是怎么实现的，多线程等等问了一个遍。<br>为什么匿名内部类的变量必须用final修饰，编译器为什么要这么做，否则会出现什么问题<br>数据库：<br>索引的分类。<br>主键索引和普通索引的区别，组合索引怎么用会失效。<br>索引的前缀匹配的原理，从B树的结构上具体分析一下。<br>聚集索引在底层怎么实现的，数据和关键字是怎么存的。<br>组合索引和唯一性索引在底层实现上的区别（这个是整个一面感觉答得不好的一个问题，不太明白面试官想问啥）<br>sql的优化策略，慢查询日志怎么操作，参数含义。<br>explain 每个列代表什么含义（关于优化级别 ref 和 all，什么时候应该用到index却没用到，关于extra列出现了usetempory 和 filesort分别的原因和如何着手优化等）<br>show profile 怎么使用。</p>
+<p>作者：<em>XiaoTeng</em><br>链接：<a href="https://www.nowcoder.com/discuss/29890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/29890</a><br>来源：牛客网</p>
+<p>一个url到页面全过程（让我能说多详细说多详细，最好从OSI七层的每一层去扩展）<br>http的请求头格式（这个真的记不太清了，只说了几个有印象的标志位）<br>getpost区别，post可不可以用url的方式传参。<br>说到了url有最大长度，就问长度有限制是get的原因还是url的原因，为什么长度会有限制，是http数据包的头的字段原因还是内容字段的原因，详细说明。（在他一步步追问下答了个差不多）<br>关于幂等性的详细介绍。<br>幂等性是http层面的问题吗，还是服务器要处理和解决的内容。（就是看你对幂等性的定性是怎么理解的）<br>后台服务器对于一个请求是如何做负载均衡的，有哪些策略，会出现什么样的问题，怎么解决。（说了一致性hash算法，分布式hash的特性,具体的应用场景，又非要问我知不知道这个最早在哪个公司使用的…我说这个真不知道。好像是amazon?）<br>说说http的缺点，无状态，明文传输。<br>那https是怎么做的，如何实现的？ca认证机构。<br>然后问我https ssl tcp三者关系，其中哪些用到了对称加密，哪些用到了非对称加密，非对称加密密钥是如何实现的。（还好我项目中涉及到了一些加密）<br>关于加密的私钥和公钥各自如何分配（客户端拿公钥，服务器拿私钥）<br>那客户端是如何认证服务器的真实身份，详细说明一下过程，包括公钥如何申请，哪一层加密哪一层解密。<br>java的优先级队列，如果让你设计一个数据结构实现优先级队列如何做？<br>用TreeMap复杂度太高，有没有更好的方法。<br>hash方法，但是队列不是定长的，如果改变了大小要rehash代价太大，还有什么方法？<br>用堆实现，那每次get put复杂度是多少（lgN）<br>（思想就是并不一定要按优先级排队列的所有对象，复杂度太高，但每次保证能取最大的就行，剩下的顺序不用保证，用堆调整最为合适）<br>在线编程题：敲一个字串匹配问题，写了常规代码。问kmp的代码思想，最后问了下正则中用的改进后的BM算法。（还有个比较新奇的Sunday算法，有兴趣的同学也可以看一下）</p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础篇"><span class="toc-number">1.</span> <span class="toc-text">基础篇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象特征"><span class="toc-number">1.1.</span> <span class="toc-text">面向对象特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final-finally-finalize"><span class="toc-number">1.2.</span> <span class="toc-text">final, finally, finalize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#int和integer有什么区别"><span class="toc-number">1.3.</span> <span class="toc-text">int和integer有什么区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重载和重写的区别"><span class="toc-number">1.4.</span> <span class="toc-text">重载和重写的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类和接口有什么区别"><span class="toc-number">1.5.</span> <span class="toc-text">抽象类和接口有什么区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反射的用途及实现"><span class="toc-number">1.6.</span> <span class="toc-text">反射的用途及实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义注解的场景及实现"><span class="toc-number">1.7.</span> <span class="toc-text">自定义注解的场景及实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP请求的GET和POST方式的区别"><span class="toc-number">1.8.</span> <span class="toc-text">HTTP请求的GET和POST方式的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session与cookie区别"><span class="toc-number">1.9.</span> <span class="toc-text">session与cookie区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC流程"><span class="toc-number">1.10.</span> <span class="toc-text">JDBC流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MVC设计思想"><span class="toc-number">2.</span> <span class="toc-text">MVC设计思想</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#集合"><span class="toc-number">3.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#List和Set区别"><span class="toc-number">3.1.</span> <span class="toc-text">List和Set区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List和Set区别-1"><span class="toc-number">3.2.</span> <span class="toc-text">List和Set区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList与LinkedList区别"><span class="toc-number">3.3.</span> <span class="toc-text">ArrayList与LinkedList区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList与Vector区别"><span class="toc-number">3.4.</span> <span class="toc-text">ArrayList与Vector区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap与Hashtable区别"><span class="toc-number">3.5.</span> <span class="toc-text">HashMap与Hashtable区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashSet与HashMap区别"><span class="toc-number">3.6.</span> <span class="toc-text">HashSet与HashMap区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap与ConcurrentHashMap区别"><span class="toc-number">3.7.</span> <span class="toc-text">HashMap与ConcurrentHashMap区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap的工作原理及代码实现"><span class="toc-number">3.8.</span> <span class="toc-text">HashMap的工作原理及代码实现</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#线程"><span class="toc-number">4.</span> <span class="toc-text">线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建线程的方式及实现"><span class="toc-number">4.1.</span> <span class="toc-text">创建线程的方式及实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sleep-、join-、yield-有什么区别"><span class="toc-number">4.2.</span> <span class="toc-text">sleep()、join()、yield()有什么区别</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&text=Java基础复习"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&title=Java基础复习"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&is_video=false&description=Java基础复习"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Java基础复习&body=Check out this article: https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&title=Java基础复习"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&title=Java基础复习"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&title=Java基础复习"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&title=Java基础复习"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yuanyunjing.github.io/2019/02/19/JAVA基础复习/&name=Java基础复习&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$("#toc-footer").toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$("#share-footer").toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$("#nav-footer").toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 YuanYunjing
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
