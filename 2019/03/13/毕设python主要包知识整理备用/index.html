@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google-site-verification" content="0iCvvQdkj22uvmbGu8W0ra3fuCEXLbU5kVCNNCrDNOE">
+    <meta name="description" content="argparse模块 import argparseparser = argparse.ArgumentParser()parser.add_argument(‘-src’, ‘–source’, dest=’video_source’, type=int,                        default=0, help=’Device index of the camera.’)">
+<meta name="keywords" content="Java  machine learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="毕设python主要包知识整理备用">
+<meta property="og:url" content="https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/index.html">
+<meta property="og:site_name" content="Orange">
+<meta property="og:description" content="argparse模块 import argparseparser = argparse.ArgumentParser()parser.add_argument(‘-src’, ‘–source’, dest=’video_source’, type=int,                        default=0, help=’Device index of the camera.’)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-14T11:25:15.060Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="毕设python主要包知识整理备用">
+<meta name="twitter:description" content="argparse模块 import argparseparser = argparse.ArgumentParser()parser.add_argument(‘-src’, ‘–source’, dest=’video_source’, type=int,                        default=0, help=’Device index of the camera.’)">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>毕设python主要包知识整理备用</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/03/16/git下载单个文件夹/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$("#i-prev").toggle();" onmouseout="$("#i-prev").toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/03/12/Anaconda创建新的虚拟环境/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$("#i-top").toggle();" onmouseout="$("#i-top").toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$("#i-share").toggle();" onmouseout="$("#i-share").toggle();" onclick="$("#share").toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&text=毕设python主要包知识整理备用"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&title=毕设python主要包知识整理备用"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&is_video=false&description=毕设python主要包知识整理备用"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=毕设python主要包知识整理备用&body=Check out this article: https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&title=毕设python主要包知识整理备用"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&title=毕设python主要包知识整理备用"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&title=毕设python主要包知识整理备用"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&title=毕设python主要包知识整理备用"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&name=毕设python主要包知识整理备用&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#argparse模块"><span class="toc-number">1.</span> <span class="toc-text">argparse模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python3多线程"><span class="toc-number">2.</span> <span class="toc-text">Python3多线程</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        毕设python主要包知识整理备用
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Orange</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2019-03-13T10:46:15.000Z" itemprop="datePublished">2019-03-13</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<h1 id="argparse模块"><a href="#argparse模块" class="headerlink" title="argparse模块"></a>argparse模块</h1><blockquote>
+<p>import argparse<br>parser = argparse.ArgumentParser()<br>parser.add_argument(‘-src’, ‘–source’, dest=’video_source’, type=int,<br>                        default=0, help=’Device index of the camera.’)<br>parser.add_argument(‘-wd’, ‘–width’, dest=’width’, type=int,<br>                        default=1280, help=’Width of the frames in the video stream.’)<br>parser.add_argument(‘-ht’, ‘–height’, dest=’height’, type=int,<br>                        default=720, help=’Height of the frames in the video stream.’)</p>
+<p>print(args.width)<br>(参数依次为：dest - 解析后的参数名称，默认情况下，对于可选参数选取最长的名称，中划线转换为下划线<br>            type - 命令行参数应该被转换成的类型<br>            default - 不指定参数时的默认值<br>            help - 参数的帮助信息，当指定为 argparse.SUPPRESS 时表示不显示该参数的帮助信息.)<br>使用：e.g. 命令行输入python objection_detection_app.py –width 20<br>输出结果为20</p>
+</blockquote>
+<h1 id="Python3多线程"><a href="#Python3多线程" class="headerlink" title="Python3多线程"></a>Python3多线程</h1><blockquote>
+<p>线程可以分为:</p>
+<ul>
+<li>内核线程：由操作系统内核创建和撤销。</li>
+<li>用户线程：不需要内核支持而在用户程序中实现的线程<br>Python3线程中常用的两个模块为：<br>_thread<br>threading(推荐使用)</li>
+</ul>
+<p>threading模块除了包含_thread模块中的所有方法外，还提供的其他方法：</p>
+<ul>
+<li>threading.currentThread():返回当前的线程变量</li>
+<li>threading.enumerate():返回一个包含正在运行的线程的list。正在运行指线程启动后、结束前，不包括启动前和终止后的线程</li>
+<li>threading.activeCount():返回正在运行的线程数量，与len(threading.enumerate())有相同的结果。</li>
+<li>run():用以表示线程活动的方法。</li>
+<li>start():启动线程活动。</li>
+<li>join([time]):等待至线程中止。这阻塞调用线程直至线程的join()方法被调用中止-正常退出或抛出未处理的异常-或者是可选的超时发生。</li>
+<li>isAlive():返回线程是否活动的。</li>
+<li>getName():返回线程名。</li>
+<li>setName():设置线程名。</li>
+</ul>
+<p>参考链接：<a href="http://www.runoob.com/python3/python3-multithreading.html" target="_blank" rel="noopener">http://www.runoob.com/python3/python3-multithreading.html</a><br><a href="http://python.jobbole.com/81546/" target="_blank" rel="noopener">http://python.jobbole.com/81546/</a></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>创建线程的方法之一：</li>
+</ul>
+<blockquote>
+<p><code>import threading, time, random
+count = 0
+lock = threading.Lock()
+def doAdd():
+    &#39;&#39;&#39;@summary: 将全局变量count 逐一的增加10000。
+    &#39;&#39;&#39;
+    global count, lock
+    lock.acquire()
+    for i in xrange(10000):
+        count = count + 1
+    lock.release()
+for i in range(5):
+    threading.Thread(target = doAdd, args = (), name = &#39;thread-&#39; + str(i)).start()
+time.sleep(2)    # 确保线程都执行完毕
+print count</code><br><code>for i in range(1):
+        t = Thread(target=worker, args=(input_q, output_q))  # 线程开始执行worker方法，方法参数值为input_q, output_q
+        t.daemon = True  # 被 flag 为 daemon 的线程需要长期在后台执行（比如发送心跳包、检查未读消息等），并且不需和用户直接交互，和守护进程类似。
+        t.start()</code><br>解释：def <strong>init</strong>(self, group=None, target=None, name=None, args=(), kwargs={})</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>参数group是预留的，用于将来扩展；</li>
+<li>参数target是一个可调用对象（也称为活动[activity]），在线程启动后执行；</li>
+<li>参数name是线程的名字。默认值为“Thread-N“，N是一个数字。</li>
+<li>参数args和kwargs分别表示调用target时的参数列表和关键字参数。</li>
+</ul>
+</blockquote>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</blockquote>
+</blockquote>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#argparse模块"><span class="toc-number">1.</span> <span class="toc-text">argparse模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python3多线程"><span class="toc-number">2.</span> <span class="toc-text">Python3多线程</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&text=毕设python主要包知识整理备用"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&title=毕设python主要包知识整理备用"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&is_video=false&description=毕设python主要包知识整理备用"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=毕设python主要包知识整理备用&body=Check out this article: https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&title=毕设python主要包知识整理备用"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&title=毕设python主要包知识整理备用"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&title=毕设python主要包知识整理备用"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&title=毕设python主要包知识整理备用"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/&name=毕设python主要包知识整理备用&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$("#toc-footer").toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$("#share-footer").toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$("#nav-footer").toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 YuanYunjing
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
