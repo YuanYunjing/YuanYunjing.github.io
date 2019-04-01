@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://yuanyunjing.github.io/2019/04/01/win10-VS2015-CUDA8-0-cudnn6-0-tensorflow1-4-0/安装包3.jpg">
 <meta property="og:image" content="https://yuanyunjing.github.io/2019/04/01/win10-VS2015-CUDA8-0-cudnn6-0-tensorflow1-4-0/安装包1.jpg">
 <meta property="og:image" content="https://yuanyunjing.github.io/2019/04/01/win10-VS2015-CUDA8-0-cudnn6-0-tensorflow1-4-0/tfversion.jpg">
-<meta property="og:updated_time" content="2019-04-01T12:14:19.896Z">
+<meta property="og:updated_time" content="2019-04-01T12:23:07.076Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="win10 + VS2015 + CUDA8.0 + cudnn6.0 + tensorflow1.4.0">
 <meta name="twitter:description" content="终于完成tensorflow-gpu的下载与成功使用，在此记录一下下载过程及下载过程中遇到的问题和解决方法 各种包、驱动等的版本号为：  OS: win10Anoconda Python 3.6.0VS 2015CUDA 8.0.61cudnn-8.0-windows10-x64-v7.1-ga.ziptensorflow 1.4.0   Anoconda Python 3.6.0 之前电脑中已">
@@ -152,19 +152,24 @@
 <p>官网下载</p>
 <p><img src="/2019/04/01/win10-VS2015-CUDA8-0-cudnn6-0-tensorflow1-4-0/安装包2.jpg" alt></p>
 <p>用该驱动打开 VS 2015的iso文件：<br><img src="/2019/04/01/win10-VS2015-CUDA8-0-cudnn6-0-tensorflow1-4-0/安装包3.jpg" alt></p>
+<p>参考链接：<br><a href="https://blog.csdn.net/guxiaonuan/article/details/73775519" target="_blank" rel="noopener">https://blog.csdn.net/guxiaonuan/article/details/73775519</a></p>
 </blockquote>
 </li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
 <li>CUDA 8.0.61<blockquote>
 <p>官网下载<br>注意事项：以管理员身份运行，精简安装（推荐）即可</p>
 </blockquote>
 </li>
 <li>cudnn-8.0-windows10-x64-v7.1-ga.zip<blockquote>
-<p>官网下载对应版本<br>需要注册并填问卷，下载后解压压缩包，将包内文件夹里面的内容分别拷贝到C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0里面的三个文件夹中去。<br>参考链接：<a href="https://blog.csdn.net/asd136912/article/details/79383161#commentBox" target="_blank" rel="noopener">https://blog.csdn.net/asd136912/article/details/79383161#commentBox</a></p>
+<p>官网下载对应版本<br>需要注册并填问卷，下载后解压压缩包，将包内文件夹里面的内容分别拷贝到<br>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0里面的三个文件夹中去。<br>参考链接：<br><a href="https://blog.csdn.net/asd136912/article/details/79383161#commentBox" target="_blank" rel="noopener">https://blog.csdn.net/asd136912/article/details/79383161#commentBox</a></p>
 <p><img src="/2019/04/01/win10-VS2015-CUDA8-0-cudnn6-0-tensorflow1-4-0/安装包1.jpg" alt></p>
 <p>后面应用的时候遇到一个问题：</p>
 <blockquote>
 <p>ImportError: Could not find ‘cudnn64_6.dll’. TensorFlow requires that this DLL be installed in a directory that is named in your %PATH% environment variable. Note that installing cuDNN is a separate step from installing CUDA, and this DLL is often found in a different directory from the CUDA DLLs. You may install the necessary DLL by downloading cuDNN 6 from this URL: <a href="https://developer.nvidia.com/cudnn" target="_blank" rel="noopener">https://developer.nvidia.com/cudnn</a><br>解决方法：<br>如果你没有 cudnn64_6.dll, 可以使用如下方法：<br>在C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin文件夹中将 cudnn64_7.dll 或 cudnn64_8.dll 重命名为 cudnn64_6.dll</p>
-<p>参考链接：<a href="https://github.com/tensorflow/tensorflow/issues/14946" target="_blank" rel="noopener">https://github.com/tensorflow/tensorflow/issues/14946</a></p>
+<p>参考链接：<br><a href="https://github.com/tensorflow/tensorflow/issues/14946" target="_blank" rel="noopener">https://github.com/tensorflow/tensorflow/issues/14946</a></p>
 </blockquote>
 </blockquote>
 </li>
@@ -174,6 +179,10 @@
 </blockquote>
 </li>
 </ol>
+<p>其他参考链接：(参考了很多，有些忘记地址啦)</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/asd136912/article/details/79383161#commentBox" target="_blank" rel="noopener">https://blog.csdn.net/asd136912/article/details/79383161#commentBox</a><br><a href="https://blog.csdn.net/Kevin_HZH/article/details/81876527" target="_blank" rel="noopener">https://blog.csdn.net/Kevin_HZH/article/details/81876527</a></p>
+</blockquote>
 </blockquote>
 
   </div>
