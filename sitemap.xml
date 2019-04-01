@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuanyunjing.github.io/2019/04/01/win10-VS2015-CUDA8-0-cudnn6-0-tensorflow1-4-0/</loc>
+    
+    <lastmod>2019-04-01T12:14:19.896Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuanyunjing.github.io/2019/03/13/%E6%AF%95%E8%AE%BEpython%E4%B8%BB%E8%A6%81%E5%8C%85%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86%E5%A4%87%E7%94%A8/</loc>
+    
+    <lastmod>2019-04-01T09:21:50.325Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yuanyunjing.github.io/2019/03/30/Pycharm%E8%AE%BE%E7%BD%AE%E6%A8%A1%E6%9D%BF%E9%BB%98%E8%AE%A4%E6%B7%BB%E5%8A%A0%E4%BD%9C%E8%80%85%E6%97%B6%E9%97%B4%E7%AD%89%E4%BF%A1%E6%81%AF/</loc>
     
-    <lastmod>2019-03-30T10:34:12.840Z</lastmod>
+    <lastmod>2019-03-30T10:35:46.534Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>https://yuanyunjing.github.io/2019/03/16/git%E4%B8%8B%E8%BD%BD%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9/</loc>
     
     <lastmod>2019-03-16T07:32:31.543Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuanyunjing.github.io/2019/03/13/%E6%AF%95%E8%AE%BEpython%E4%B8%BB%E8%A6%81%E5%8C%85%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86%E5%A4%87%E7%94%A8/</loc>
-    
-    <lastmod>2019-03-14T11:25:15.060Z</lastmod>
     
   </url>
   
