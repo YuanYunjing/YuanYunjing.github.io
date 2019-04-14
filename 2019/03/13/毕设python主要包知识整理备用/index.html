@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Orange">
 <meta property="og:description" content="argparse模块 import argparseparser = argparse.ArgumentParser()parser.add_argument(‘-src’, ‘–source’, dest=’video_source’, type=int,                        default=0, help=’Device index of the camera.’)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-01T09:21:50.325Z">
+<meta property="og:updated_time" content="2019-04-14T06:57:00.737Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="毕设python主要包知识整理备用">
 <meta name="twitter:description" content="argparse模块 import argparseparser = argparse.ArgumentParser()parser.add_argument(‘-src’, ‘–source’, dest=’video_source’, type=int,                        default=0, help=’Device index of the camera.’)">
@@ -100,7 +100,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#argparse模块"><span class="toc-number">1.</span> <span class="toc-text">argparse模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python3多线程"><span class="toc-number">2.</span> <span class="toc-text">Python3多线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tensorflow"><span class="toc-number">3.</span> <span class="toc-text">tensorflow</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python"><span class="toc-number">4.</span> <span class="toc-text">Python</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#argparse模块"><span class="toc-number">1.</span> <span class="toc-text">argparse模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据库使用模块"><span class="toc-number">2.</span> <span class="toc-text">数据库使用模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python3多线程"><span class="toc-number">3.</span> <span class="toc-text">Python3多线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tensorflow"><span class="toc-number">4.</span> <span class="toc-text">tensorflow</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python"><span class="toc-number">5.</span> <span class="toc-text">Python</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -139,6 +139,33 @@
 <p>import argparse<br>parser = argparse.ArgumentParser()<br>parser.add_argument(‘-src’, ‘–source’, dest=’video_source’, type=int,<br>                        default=0, help=’Device index of the camera.’)<br>parser.add_argument(‘-wd’, ‘–width’, dest=’width’, type=int,<br>                        default=1280, help=’Width of the frames in the video stream.’)<br>parser.add_argument(‘-ht’, ‘–height’, dest=’height’, type=int,<br>                        default=720, help=’Height of the frames in the video stream.’)</p>
 <p>print(args.width)<br>(参数依次为：dest - 解析后的参数名称，默认情况下，对于可选参数选取最长的名称，中划线转换为下划线<br>            type - 命令行参数应该被转换成的类型<br>            default - 不指定参数时的默认值<br>            help - 参数的帮助信息，当指定为 argparse.SUPPRESS 时表示不显示该参数的帮助信息.)<br>使用：e.g. 命令行输入python objection_detection_app.py –width 20<br>输出结果为20</p>
 </blockquote>
+</blockquote>
+<blockquote>
+<h1 id="数据库使用模块"><a href="#数据库使用模块" class="headerlink" title="数据库使用模块"></a>数据库使用模块</h1><p>2017 MySQLdb只支持Python2.<em> ，还不支持3.</em></p>
+<blockquote>
+<ol>
+<li>MySQLdb<blockquote>
+</blockquote>
+<figure class="highlight plain"><figcaption><span>MySQLdb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">db = MySQLdb.connect(&quot;localhost&quot;,&quot;root&quot;,&apos;...&apos;,&apos;test&apos;)</span><br><span class="line"></span><br><span class="line">cursor = db.cursor()</span><br><span class="line">name=&quot;ali&quot;</span><br><span class="line">age = 10</span><br><span class="line"># sql = &quot;select * from student;&quot;</span><br><span class="line"># sql = &quot;insert into student(name,age) values(&apos;%s&apos;,&apos;%s&apos;)&quot;%(name, age)</span><br><span class="line">sql = &quot;delete from student where name=&apos;%s&apos;&quot;%(name)</span><br><span class="line">cursor.execute(sql)</span><br><span class="line"></span><br><span class="line"># result = cursor.fetchall()</span><br><span class="line"></span><br><span class="line"># print type(result)</span><br><span class="line"></span><br><span class="line">db.commit()</span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ol start="2">
+<li>pymysql<blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line"></span><br><span class="line">ms = pymysql.connect(host=&apos;localhost&apos;, user=&apos;root&apos;, passwd=&apos;...&apos;, database=&apos;person_seat_detection&apos;, charset=&apos;utf8&apos;)</span><br><span class="line">cur = ms.cursor()</span><br><span class="line"></span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"># 存数据</span><br><span class="line">sql = &quot;insert into schinfo values(1, &apos;北华航天工业学院&apos;, &apos;河北省廊坊市&apos;)&quot;</span><br><span class="line">cur.execute(sql)</span><br><span class="line">ms.commit()</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"></span><br><span class="line"># 读数据</span><br><span class="line">sql = &quot;select * from schinfo&quot;</span><br><span class="line">count = cur.execute(sql)</span><br><span class="line">for i in range(count):</span><br><span class="line">    print(cur.fetchone())  # 结果为(1, &apos;北华航天工业学院&apos;, &apos;河北省廊坊市&apos;)</span><br><span class="line"></span><br><span class="line">cur.close()</span><br><span class="line">ms.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># count = cur.execute(&quot;&quot;&quot;SELECT cid, sq_name, content, labels, score</span><br><span class="line">#                            from content_copy1_copy</span><br><span class="line">#                            where labels != &apos;&apos;&quot;&quot;&quot;)</span><br><span class="line"># flag = 0</span><br><span class="line"># for i in range(count):</span><br><span class="line">#     fc = cur.fetchone()</span><br><span class="line">#     cur_cid = ms.cursor()</span><br><span class="line">#     count_cid = cur_cid.execute(&quot;select cid from shequscore_copy1_copy where cid = %s&quot;, (fc[0]))</span><br><span class="line">#     if count_cid == 0:</span><br><span class="line">#         cur_inser = ms.cursor()</span><br><span class="line">#         cur_inser.execute(&quot;insert into shequscore_copy1_copy values(%s, %s, %s, %s, %s)&quot;,</span><br><span class="line">#                           (fc[0], fc[1], fc[2], fc[3], fc[4]))</span><br><span class="line">#         flag += 1</span><br><span class="line">#         ms.commit()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
 <h1 id="Python3多线程"><a href="#Python3多线程" class="headerlink" title="Python3多线程"></a>Python3多线程</h1><blockquote>
 <p>线程可以分为:</p>
 <ul>
@@ -238,7 +265,7 @@ print count</code><br><code>for i in range(1):
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#argparse模块"><span class="toc-number">1.</span> <span class="toc-text">argparse模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python3多线程"><span class="toc-number">2.</span> <span class="toc-text">Python3多线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tensorflow"><span class="toc-number">3.</span> <span class="toc-text">tensorflow</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python"><span class="toc-number">4.</span> <span class="toc-text">Python</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#argparse模块"><span class="toc-number">1.</span> <span class="toc-text">argparse模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据库使用模块"><span class="toc-number">2.</span> <span class="toc-text">数据库使用模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python3多线程"><span class="toc-number">3.</span> <span class="toc-text">Python3多线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tensorflow"><span class="toc-number">4.</span> <span class="toc-text">tensorflow</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python"><span class="toc-number">5.</span> <span class="toc-text">Python</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
