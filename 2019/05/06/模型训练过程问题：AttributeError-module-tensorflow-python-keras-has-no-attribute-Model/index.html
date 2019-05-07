@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Orange">
 <meta property="og:description" content="tensorflow-gpu 1.4.0版本执行object_detection/legacy/train.py过程中报错如下：AttributeError: module &amp;#39;tensorflow.python.keras&amp;#39; has no attribute &amp;#39;Model&amp;#39;(执行命令为： python legacy/train.py --logtostderr --">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-06T13:23:58.047Z">
+<meta property="og:updated_time" content="2019-05-07T09:23:09.516Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模型训练过程问题：AttributeError: module &#39;tensorflow.python.keras&#39; has no attribute &#39;Model&#39;">
 <meta name="twitter:description" content="tensorflow-gpu 1.4.0版本执行object_detection/legacy/train.py过程中报错如下：AttributeError: module &amp;#39;tensorflow.python.keras&amp;#39; has no attribute &amp;#39;Model&amp;#39;(执行命令为： python legacy/train.py --logtostderr --">
@@ -69,6 +69,8 @@
     <br>
     <span id="actions">
       <ul>
+        
+        <li><a class="icon" href="/2019/05/07/模型训练过程问题：ImportError-No-module-named-nets/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$("#i-prev").toggle();" onmouseout="$("#i-prev").toggle();"></i></a></li>
         
         
         <li><a class="icon" href="/2019/04/22/视频图像抓取（VideoCapture）/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
@@ -134,7 +136,7 @@
   <div class="content" itemprop="articleBody">
     <p>tensorflow-gpu 1.4.0版本<br>执行object_detection/legacy/train.py过程中报错如下：<br><code>AttributeError: module &#39;tensorflow.python.keras&#39; has no attribute &#39;Model&#39;</code><br>(执行命令为：</p>
 <p><code>python legacy/train.py --logtostderr --train_dir=training/ --pipeline_config_path=ssd_mobilenet_v1_pets.config</code><br>参考链接：<a href="https://tomoya92.github.io/2018/09/17/tensorflow-object-detection/" target="_blank" rel="noopener">https://tomoya92.github.io/2018/09/17/tensorflow-object-detection/</a><br>)</p>
-<p>解决方法：<br>将tf.keras.Model改为tf.keras.models.Model<br>参考链接：<a href="https://stackoverflow.com/questions/51873651/attributeerror-module-tensorflow-python-keras-has-no-attribute-model" target="_blank" rel="noopener">https://stackoverflow.com/questions/51873651/attributeerror-module-tensorflow-python-keras-has-no-attribute-model</a></p>
+<p><em>解决方法：</em><br>将tf.keras.Model改为tf.keras.models.Model<br>参考链接：<a href="https://stackoverflow.com/questions/51873651/attributeerror-module-tensorflow-python-keras-has-no-attribute-model" target="_blank" rel="noopener">https://stackoverflow.com/questions/51873651/attributeerror-module-tensorflow-python-keras-has-no-attribute-model</a></p>
 
   </div>
 </article>
