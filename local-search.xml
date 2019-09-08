@@ -8,9 +8,15 @@
       <link href="undefined2019/09/07/Java%E5%BC%80%E5%8F%91%E5%8C%85%E7%9A%84%E7%A7%8D%E7%B1%BB-%E5%BC%80%E5%AD%A6%E5%A4%8D%E4%B9%A0%E7%B3%BB%E5%88%97/"/>
       <url>2019/09/07/Java%E5%BC%80%E5%8F%91%E5%8C%85%E7%9A%84%E7%A7%8D%E7%B1%BB-%E5%BC%80%E5%AD%A6%E5%A4%8D%E4%B9%A0%E7%B3%BB%E5%88%97/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>Java开发包根据用途的不同已经分为Java EE、 Java SE 和Java ME 3个，求职者列出名称并具体描述每个开发包的用途即可。</p><p>Java JDK的版本分类如下：<br>Java ME （Java Platform Micro Edition）:一种以广泛的消费产品为目的的高度优化的Java运行环境，包括寻呼机、移动电话、可视电话、数字机顶盒等。它是致力于消费产品和嵌入式设备的开发人员的最佳选择。<br>Java SE （Java Platform Standard Edition）:SUN 公司针对桌面开发以及低端商务计算解决方案而开发的版本。<br>Java EE （Java Platform Enterprise Edition）:一种利用Java平台来简化企业解决方案的开发、部署和管理相关的复杂问题的体系结构。Java EE的基础是Java SE，Java EE不仅巩固了标准版中的许多优点，同时还提供了对EJB、Servlet、JSP以及XML技术的全面支持。</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
       
     </entry>
     
