@@ -105,36 +105,24 @@
         
         
         <div class="col-12 col-md-8 m-auto">
-            <a href="/2019/04/11/计算机视觉八大任务概述/">
-                <p class="h4 index-header">计算机视觉八大任务概述</p>
+            <a href="/2019/03/08/git上传文件/">
+                <p class="h4 index-header">git上传文件</p>
                 <div class="index-excerpt">
                     
                         <div class="index-text mb-1">
-原文链接：https://m.pythontab.com/article/1405
+参考文章：[1]git上传https://blog.csdn.net/chenyufeng1991/article/details/48930471[2]git上传两种方法https://blog.csdn.net/Lucky_LXG/article/details/77849212#commentBox[3]git-处理-github-不允许上传超过-100mb-文件的问题http://www.liuxiao.org/2017/02/git-%E5%A4%84%E7%90%86-github-%E4%B8%8D%E5%85%81%E8%AE%B8%E4%B8%8A%E4%BC%A0%E8%B6%85%E8%BF%87-100mb-%E6%96%87%E4%BB%B6%E7%9A%84%E9%97%AE%E9%A2%98/
+很长一段时间没有用git了，前几天使用git上传文件，又重新查找了一下git的使用方式，整理在这里
 
-
-在此作简要整理
-
-
-计算机视觉领域的八大任务：图像分类、目标检测、图像语义分割、场景文字识别 —四大基本任务场景（如何帮助计算机从单个或者一系列的图片中提取分析和理解的关键信息）图像生成、人体关键点检测、视频分类、度量学习等。
-
-
-一、图像分类
-
-得益于深度学习的推动，图像分类的准确率大幅度提升。在经典的数据集ImageNet上，训练图像分类任务常用的模型，包括AlexNet、VGG、GoogLeNet、ResNet、Inception-v4、MobileNet、MobileNetV2、DPN(Dual Path Network)、SE-ResNeXt、ShuffleNet等模型的结构和复杂程度都不一样，最终得到的准确率也有所区别。
-
-
-
-二、目标检测
-
-目标检测人物的目标是给定一张图像或是一个视频帧，让计算机找出其中所有目标的位置，并给出每个目标的具体类别。在目标检测任务中，我们主要介绍如何基于PASCAL VOC、MS COCO数据训练通用物体检测模型，包括SSD模型、PyramidBox模型</div>
+git init在本地建立git仓库（会在文件夹下建立.git隐藏文件）
+git add .将当前文件夹下的所有文件加载到本地暂存区
+git commit -m </div>
                     
                 </div>
             </a>
 
             
                 <div>
-                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-04-11
+                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-03-08
                     &nbsp;&nbsp;
                     
                     
@@ -147,94 +135,36 @@
         
         
         <div class="col-12 col-md-8 m-auto">
-            <a href="/2019/04/01/win10-VS2015-CUDA8-0-cudnn6-0-tensorflow1-4-0/">
-                <p class="h4 index-header">win10 + VS2015 + CUDA8.0 + cudnn6.0 + tensorflow1.4.0</p>
+            <a href="/2019/03/04/git学习笔记/">
+                <p class="h4 index-header">git学习笔记</p>
                 <div class="index-excerpt">
                     
-                        <div class="index-text mb-1">
-终于完成tensorflow-gpu的下载与成功使用，在此记录一下下载过程及下载过程中遇到的问题和解决方法
-开始只安装了tensorflow 1.12.0，也不太清楚cpu、gpu等内容，然后运行github上下载的程序，报错如下：报错：tensorflow.python.framework.errors_impl.InternalError: cudaGetDevice() failed.        Status: CUDA driver version is insufficient for CUDA runtime version
-上网查看后说是CUDA等的版本问题，然后一步一步下载…… 
-各种包、驱动等的版本号为：
+                        <div class="index-text mb-1">更新：hexo g -d 更新文件并发布到git上hexo g 更新文件hexo s 开启hexo本地服务器
+(之前学习git记录的学习笔记‎2018‎年‎8‎月‎3‎日)
+小结现在总结一下今天学的两点内容：
+初始化一个Git仓库，使用git init命令。
+添加文件到Git仓库，分两步：
+使用命令git add ，注意，可反复多次使用，添加多个文件；使用命令git commit -m ，完成。
 
-OS: win10Anoconda Python 3.6.0VS 2015CUDA 8.0.61cudnn-8.0-windows10-x64-v7.1-ga.zip（已改为cudnn-7.5-windows10-x64-v6.0.zip）tensorflow 1.4.0
+小结要随时掌握工作区的状态，使用git status命令。
+如果git status告诉你有文件被修改过，用git diff可以查看修改内容。
 
+现在总结一下：
+HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset –hard commit_id。
+穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
 
-Anoconda Python 3.6.0
-之前电脑中已安装，官网下载即可
+小结现在，你又理解了Git是如何跟踪修改的，每次修改，如果不用git add到暂存区，那就不会加入到commit中。
 
-
-V</div>
+小结又到了小结时间。
+场景1</div>
                     
                 </div>
             </a>
 
             
                 <div>
-                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-04-01
-                    &nbsp;&nbsp;
-                    
-                    
-                </div>
-            
-        </div>
-    </div>
-
-    <div class="row mb-4 mx-auto">
-        
-        
-        <div class="col-12 col-md-8 m-auto">
-            <a href="/2019/03/30/Pycharm设置模板默认添加作者时间等信息/">
-                <p class="h4 index-header">Pycharm设置模板默认添加作者时间等信息</p>
-                <div class="index-excerpt">
-                    
-                        <div class="index-text mb-1">
-参考：https://blog.csdn.net/qq_32040767/article/details/78981528#commentBox记录过程方便使用：
-
-File &gt; Settings &gt; Editor &gt; File and Code Templates选择 Python Script设置内容为： 
-
-#encoding = utf-8
-‘’’Author : “Yuan Yunjing”Date : “$DATE $TIME”File : “$NAME .py”IDE : “$PRODUCT_NAME”‘’’
-
-
-
-</div>
-                    
-                </div>
-            </a>
-
-            
-                <div>
-                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-03-30
-                    &nbsp;&nbsp;
-                    
-                    
-                </div>
-            
-        </div>
-    </div>
-
-    <div class="row mb-4 mx-auto">
-        
-        
-        <div class="col-12 col-md-8 m-auto">
-            <a href="/2019/03/16/git下载单个文件夹/">
-                <p class="h4 index-header">git下载单个文件夹</p>
-                <div class="index-excerpt">
-                    
-                        <div class="index-text mb-1">
-最近需要在github上下载一个项目，但是总是下载中断显示网络错误，可能是文件大，github下载困难（也不太清楚具体原因，有时间想做一个博客评论区，希望路过的大佬留下宝贵的意见、指导），于是想下载单个文件夹（因为项目需要，单个文件夹就可以了），找了好多方法，也有在Chrome中安装Otco Mate插件，据说是下载单个文件的，总之各种原因也没有成功，然后看到：https://github.com/Yangfan2016/Yangfan2016.github.io/blob/src/source/_posts/%E4%B8%8B%E8%BD%BD-Github-%E4%BB%93%E5%BA%93%E7%9A%84%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9.md通过git命令成功下载，主要为：
-
-git init
-git config core.sparseCheckout true
-git remote add -f originhttps://github.com/YuanYunjing/object_detector_app.gi</div>
-                    
-                </div>
-            </a>
-
-            
-                <div>
-                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-03-16
+                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-03-04
                     &nbsp;&nbsp;
                     
                     
@@ -252,21 +182,120 @@ git remote add -f originhttps://github.com/YuanYunjing/object_detector_app.gi</d
         
         
         <div class="col-12 col-md-8 m-auto">
-            <a href="/2019/03/13/毕设python主要包知识整理备用/">
-                <p class="h4 index-header">毕设python主要包知识整理备用</p>
+            <a href="/2019/02/19/JAVA基础复习/">
+                <p class="h4 index-header">Java基础复习（杂记，待更新）</p>
                 <div class="index-excerpt">
                     
-                        <div class="index-text mb-1">
-argparse模块
-import argparseparser = argparse.ArgumentParser()parser.add_argument(‘-src’, ‘–source’, dest=’video_source’, type=int,                        default=0, help=’Device index of the camera.’)parser.add_argument(‘-wd’, ‘–width’, dest=’width’, type=int,                        default=1280, help=’Width of the frames in the video stream.’)parser.add_argument(‘-ht’, ‘–height’, dest=’height’, type=int,                        default=720, help=’Height of the frames in the video stream.’)
-print</div>
+                        <div class="index-text mb-1">基础篇
+面向对象特征
+
+封装 给对象提供了隐藏内部特性和行为的能力封装的一些好处：
+通过隐藏对象的属性来保护对象内部的状态提高了代码的可用性和可维护性，因为对象的行为可以被单独的改变或者是扩展禁止对象之间的不良交互提高模块化
+
+
+继承 
+继承给对象提供了从基类获取字段和方法的能力提高了代码的重用性，也可以在不修改类的情况下给现存的类添加新特性
+
+
+多态 
+多态存在的必要条件：继承、重写、父类引用指向子类对象多态的实现方式：重写、接口、抽象类和抽象方法多态的好处：可以使程序有良好的扩展，并可以对所有类的对象进行通用处理
+
+
+
+
+final, finally, finalize
+
+final修饰符（关键字）
+如果一个类被声明为final，意味着它不能再派生出新的子类，不能作为父类被继承。（因此一个类不能既被声明为abstract的，有被声明为final的）。将变量或方法声明为final，可以保证他们在使用中不被改变。（被声明为final的变量必须在声明时给定初值，而在以后的引用中只能读取，不可修改。）被声明为final的方法也同样只能使用，不能重载（？）
+
+
+finally
+在异常处理时提</div>
                     
                 </div>
             </a>
 
             
                 <div>
-                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-03-13
+                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-02-19
+                    &nbsp;&nbsp;
+                    
+                    
+                        |&nbsp;&nbsp;<i class="iconfont icon-tag"></i>
+                        
+                            <a href="/tags/Java">Java</a>&nbsp;
+                        
+                    
+                </div>
+            
+        </div>
+    </div>
+
+    <div class="row mb-4 mx-auto">
+        
+        
+        <div class="col-12 col-md-8 m-auto">
+            <a href="/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/">
+                <p class="h4 index-header">论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）</p>
+                <div class="index-excerpt">
+                    
+                        <div class="index-text mb-1">摘要
+如今智能会议管理受到人们的广泛关注。现有的大多数智能系统只关注小型会议室中的谈话记录，而本文介绍了一种大礼堂智能会议管理系统。系统中嵌入了级联空座检测算法，以获取每个座位的状态。根据遮挡的程度逐级标示空位情况。结合预先输入的与会者信息，系统可以在会议期间为人们提供就座情况和相应的与会者信息。实验结果表明，座椅状态检测精度可达99.8%。
+
+类别和主题描述符
+H.4[图像处理与计算机视觉]:杂项
+
+关键字
+智能会议，视频分析，座位检测
+
+
+1 前言
+会议是以交流和交换信息为目的的最常见的活动之一。因而会议的智能化管理对于提高会议管理的效率，营造安全的会议环境具有非常重大的意义。会议智能管理系统旨在了解会议室中发生了什么、正在发生什么以及将要发生什么。因此，基于物体检测跟踪、行为识别等的视频分析在智能会议管理中扮演着非常重要的角色。
+到目前为止，已经有许多智能会议相关的概念, [1, 2, 3, 4]. 其中有许多都借助视频分析来理解其情境中的内容。检测和跟踪的方法是用来分析与会者的行为[5,6]，以了解在会议室里发生了什么。然而，在一个大礼堂里，人们总是在整个会议过程中坐在自己的座</div>
+                    
+                </div>
+            </a>
+
+            
+                <div>
+                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-02-19
+                    &nbsp;&nbsp;
+                    
+                    
+                        |&nbsp;&nbsp;<i class="iconfont icon-tag"></i>
+                        
+                            <a href="/tags/%E5%BA%A7%E4%BD%8D%E6%A3%80%E6%B5%8B">座位检测</a>&nbsp;
+                        
+                    
+                </div>
+            
+        </div>
+    </div>
+
+    <div class="row mb-4 mx-auto">
+        
+        
+        <div class="col-12 col-md-8 m-auto">
+            <a href="/2019/02/18/selftesting/">
+                <p class="h4 index-header">专业学习情况 ---kind of 自我剖析</p>
+                <div class="index-excerpt">
+                    
+                        <div class="index-text mb-1">
+最近在准备实习面试，找工作看到职位要求的时候，感觉自己在专业方面学了很多但专通的很少，所以想把学习过的东西整理一下，便于自己对自己的专业能力以及目标职位有一个清晰的认识。
+
+
+0 本科课程学习的知识C语言大一基本使用的都是C语言或是伪C++，并应用C语言做课程设计，主要是对数据结构的应用，内容是路线查找，最短路径等，如果需要使用C语言做项目的话应该是比较容易上手的，可能有难度的是算法的设计使用吧
+数据结构考研初试准备中复习了重要的数据结构、算法，但是感觉如果面试相关内容如各种排序算法的话，仍然需要复习一下
+JavaJava是大学期间接触最多的一门语言，但是几乎没有用Java做过较大的项目,除课程设计之外，只有在毕设学习微信公众号开发时有简单用到。由于没有系统的较大项目的应用，因此对Java线程等的内容仍然比较模糊（由于毕设需要用到，因此会继续系统的学习线程的使用方法）
+JSP网站开发MVC分层、SSH、SSM等是选择企业方向后主要学习的内容，但是想要找相关工作的话仍然需要进一步熟悉模型、框架等的原理
+前端开发主要为css、js、dom、div、jquery、bootstrap等。自我</div>
+                    
+                </div>
+            </a>
+
+            
+                <div>
+                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-02-18
                     &nbsp;&nbsp;
                     
                     
@@ -279,53 +308,23 @@ print</div>
         
         
         <div class="col-12 col-md-8 m-auto">
-            <a href="/2019/03/12/Anaconda创建新的虚拟环境/">
-                <p class="h4 index-header">Anaconda创建新的虚拟环境</p>
+            <a href="/2019/02/17/first-writing/">
+                <p class="h4 index-header">Orange-first-writing</p>
                 <div class="index-excerpt">
                     
                         <div class="index-text mb-1">
+第一次动手搭建自己的博客，用了不到一天的时间（据说五分钟就可以┐（~ー~;）┌）之前一直都是在CSDN记录自己的项目问题、专业学习，看到同学大佬用Hexo搭建的文章博客很精致，所以也想搭建一个属于自己的博客空间，很期待在这里记录自己的一些随笔心得和专业方面的成长……Nice to meet you.
 
-用conda创建名为mytensorflow的新环境
-
-查看电脑的conda环境和版本
-
-conda info –envsbase是安装anaconda后默认创建的环境conda –version创建名字为mytensorflow python版本为3.6的新环境conda create –name mytensorflow python=3.6创建环境后用命令conda info –envs查看，星号代表正在运行的环境
-
-
-
-激活刚刚创建的新环境
-
-activate mytensorflow用命令conda info –envs查看，星号代表正在运行的环境
-
-
-
-
-…环境激活
-
-
-在新环境中安装tensorflow
-查看Anaconda repository中我们可利用的版本
-
-conda search tensorflow安装tensorflowconda install tensorflow……
-
-
-
-
-知识内容主要来源：https://zhuanlan.zhihu.com/p/37050300（起初是用于解决tensorflow异常终止问题，如该链接中楼主所整理）知识搬运、</div>
+</div>
                     
                 </div>
             </a>
 
             
                 <div>
-                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-03-12
+                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-02-17
                     &nbsp;&nbsp;
                     
-                    
-                        |&nbsp;&nbsp;<i class="iconfont icon-tag"></i>
-                        
-                            <a href="/tags/Anaconda%20%E7%9F%A5%E8%AF%86%E6%90%AC%E8%BF%90">Anaconda 知识搬运</a>&nbsp;
-                        
                     
                 </div>
             
@@ -338,13 +337,9 @@ conda search tensorflow安装tensorflowconda install tensorflow……
 <ul class="pagination pg-blue justify-content-center mt-5">
     
         <li class="page-item">
-        <a class="page-link" href="/">上一页</a>
+        <a class="page-link" href="/page/2/">上一页</a>
         </li>
     
-    
-        <li class="page-item">
-        <a class="page-link" href="/page/3/">下一页</a>
-        </li>
     
 </ul>
 </nav>
