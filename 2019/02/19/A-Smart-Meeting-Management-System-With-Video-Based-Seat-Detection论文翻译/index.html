@@ -1,155 +1,110 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang="zh-CN">
+
+
+
+
+
 <head><meta name="generator" content="Hexo 3.8.0">
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="google-site-verification" content="0iCvvQdkj22uvmbGu8W0ra3fuCEXLbU5kVCNNCrDNOE">
-    <meta name="description" content="摘要 如今智能会议管理受到人们的广泛关注。现有的大多数智能系统只关注小型会议室中的谈话记录，而本文介绍了一种大礼堂智能会议管理系统。系统中嵌入了级联空座检测算法，以获取每个座位的状态。根据遮挡的程度逐级标示空位情况。结合预先输入的与会者信息，系统可以在会议期间为人们提供就座情况和相应的与会者信息。实验结果表明，座椅状态检测精度可达99.8%。  类别和主题描述符 H.4[图像处理与计算机视觉]:杂">
-<meta name="keywords" content="座位检测">
-<meta property="og:type" content="article">
-<meta property="og:title" content="论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）">
-<meta property="og:url" content="https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/index.html">
-<meta property="og:site_name" content="Orange">
-<meta property="og:description" content="摘要 如今智能会议管理受到人们的广泛关注。现有的大多数智能系统只关注小型会议室中的谈话记录，而本文介绍了一种大礼堂智能会议管理系统。系统中嵌入了级联空座检测算法，以获取每个座位的状态。根据遮挡的程度逐级标示空位情况。结合预先输入的与会者信息，系统可以在会议期间为人们提供就座情况和相应的与会者信息。实验结果表明，座椅状态检测精度可达99.8%。  类别和主题描述符 H.4[图像处理与计算机视觉]:杂">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/2.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/3.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/4.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/1.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/b1.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/5.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/6.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/7.png">
-<meta property="og:image" content="https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/8.png">
-<meta property="og:updated_time" content="2019-02-19T13:52:33.995Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）">
-<meta name="twitter:description" content="摘要 如今智能会议管理受到人们的广泛关注。现有的大多数智能系统只关注小型会议室中的谈话记录，而本文介绍了一种大礼堂智能会议管理系统。系统中嵌入了级联空座检测算法，以获取每个座位的状态。根据遮挡的程度逐级标示空位情况。结合预先输入的与会者信息，系统可以在会议期间为人们提供就座情况和相应的与会者信息。实验结果表明，座椅状态检测精度可达99.8%。  类别和主题描述符 H.4[图像处理与计算机视觉]:杂">
-<meta name="twitter:image" content="https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/2.png">
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="keep learning...">
+    <meta name="author" content="YuanYunjing">
+    <meta name="keywords" content="Java  machine learning">
+    <title>论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译） ~ Orange</title>
+    <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css?v=5.7.2">
+    <link rel="stylesheet" href="/lib/mdbootstrap/css/bootstrap.min.css?v=4.3.1">
+    <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css?v=4.8.7">
+    <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
+    <link rel="stylesheet" href="/lib/nprogress/nprogress.css?v=0.2.0">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
     
+        <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
     
-        
-          
-              <link rel="shortcut icon" href="/images/favicon.ico">
-          
-        
-        
-          
-            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-          
-        
-        
-          
-            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-          
-        
-    
-    <!-- title -->
-    <title>论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）</title>
-    <!-- styles -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- rss -->
-    
+    <link rel="stylesheet" href="/css/main.css">
+
     
 </head>
 
-<body>
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
-        
-      </ul>
-    </span>
-    <br>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" href="/2019/02/19/JAVA基础复习/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$("#i-prev").toggle();" onmouseout="$("#i-prev").toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" href="/2019/02/18/selftesting/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
-        
-        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$("#i-top").toggle();" onmouseout="$("#i-top").toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$("#i-share").toggle();" onmouseout="$("#i-share").toggle();" onclick="$("#share").toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&text=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&is_video=false&description=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）&body=Check out this article: https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&name=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
-</ul>
 
+<body>
+<header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+<div class="container">
+    <a class="navbar-brand" href="/">&nbsp;<strong>Orange</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto text-center">
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/archives/">Archives</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/categories/">Categories</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/tags/">Tags</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/about/">About</a>
+            </li>
+            
+            
+                <li class="nav-item" id="search-btn">
+                    <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+                </li>
+            
+        </ul>
     </div>
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类别和主题描述符"><span class="toc-number">2.</span> <span class="toc-text">类别和主题描述符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关键字"><span class="toc-number">3.</span> <span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-前言"><span class="toc-number">4.</span> <span class="toc-text">1 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-座位检测"><span class="toc-number">5.</span> <span class="toc-text">2 座位检测</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-粗检索过程"><span class="toc-number">5.1.</span> <span class="toc-text">2.1 粗检索过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-细检索过程"><span class="toc-number">5.2.</span> <span class="toc-text">2.2 细检索过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-按时间结果校准"><span class="toc-number">5.3.</span> <span class="toc-text">2.3 按时间结果校准</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-实验结果与应用"><span class="toc-number">6.</span> <span class="toc-text">3 实验结果与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-PTZ摄像头设置"><span class="toc-number">6.1.</span> <span class="toc-text">3.1 PTZ摄像头设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-座椅检测结果"><span class="toc-number">6.2.</span> <span class="toc-text">3.2 座椅检测结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-座椅检测的应用"><span class="toc-number">6.3.</span> <span class="toc-text">3.3 座椅检测的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-大礼堂的整体情况"><span class="toc-number">6.3.1.</span> <span class="toc-text">3.3.1 大礼堂的整体情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-大礼堂的局部情况"><span class="toc-number">6.3.2.</span> <span class="toc-text">3.3.2 大礼堂的局部情况</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-总结"><span class="toc-number">7.</span> <span class="toc-text">4 总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-致谢"><span class="toc-number">8.</span> <span class="toc-text">5 致谢</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-参考文献"><span class="toc-number">9.</span> <span class="toc-text">6 参考文献</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原文链接"><span class="toc-number">10.</span> <span class="toc-text">原文链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#笔记"><span class="toc-number">11.</span> <span class="toc-text">笔记</span></a></li></ol>
-    </div>
-  </span>
 </div>
 
+
+</nav>
+    <div class="view intro-2"
+         style="background: url('/img/post.jpg')no-repeat center center;background-size: cover;">
+        <div class="full-bg-img">
+            <div class="mask rgba-black-light flex-center">
+                <div class="container text-center white-text wow fadeInUp">
+                    <span class="h2" id="subtitle">
+                        
+                    </span>
+                    
+                        <br>
+                        <p>星期二, 二月 19日 2019, 1:50 下午</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
     
-    <div class="content index width mx-auto px2 my4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
-    <h1 class="posttitle" itemprop="name headline">
-        论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）
-    </h1>
 
-
-
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Orange</span>
-      </span>
-      
-    <div class="postdate">
-        <time datetime="2019-02-19T05:50:28.000Z" itemprop="datePublished">2019-02-19</time>
-    </div>
-
-
-      
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/座位检测/">座位检测</a>
-    </div>
-
-
-    </div>
-  </header>
-  
-
-  <div class="content" itemprop="articleBody">
-    <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><blockquote>
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-lg-8 nopadding-md">
+                <div class="py-5 z-depth-3 board">
+                    <div class="post-content mx-auto">
+                        <div class="markdown-body">
+                            <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><blockquote>
 <p>如今智能会议管理受到人们的广泛关注。现有的大多数智能系统只关注小型会议室中的谈话记录，而本文介绍了一种大礼堂智能会议管理系统。系统中嵌入了级联空座检测算法，以获取每个座位的状态。根据遮挡的程度逐级标示空位情况。结合预先输入的与会者信息，系统可以在会议期间为人们提供就座情况和相应的与会者信息。实验结果表明，座椅状态检测精度可达99.8%。</p>
 </blockquote>
 <h1 id="类别和主题描述符"><a href="#类别和主题描述符" class="headerlink" title="类别和主题描述符"></a>类别和主题描述符</h1><blockquote>
@@ -264,107 +219,148 @@
 <p>座位检测 seat-detection<br>实时性 real-time</p>
 </blockquote>
 
+                            <hr>
+                        </div>
+                        <br>
+                        <div>
+                            
+                            <p>
+                                <i class="iconfont icon-tag"></i>
+                                
+                                    <a class="hover-with-bg" href="/tags/%E5%BA%A7%E4%BD%8D%E6%A3%80%E6%B5%8B">座位检测</a>
+                                
+                            </p>
+                            
+                                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="d-none d-lg-block col-lg-2 toc-container">
+            
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p> 
+    <div id="tocbot"></div>
   </div>
-</article>
 
-
-
+        </div>
     </div>
-    
-      <div id="footer-post-container">
-  <div id="footer-post">
+</div>
 
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container comments mx-auto" id="comments">
         
-      </ul>
     </div>
-
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类别和主题描述符"><span class="toc-number">2.</span> <span class="toc-text">类别和主题描述符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关键字"><span class="toc-number">3.</span> <span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-前言"><span class="toc-number">4.</span> <span class="toc-text">1 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-座位检测"><span class="toc-number">5.</span> <span class="toc-text">2 座位检测</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-粗检索过程"><span class="toc-number">5.1.</span> <span class="toc-text">2.1 粗检索过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-细检索过程"><span class="toc-number">5.2.</span> <span class="toc-text">2.2 细检索过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-按时间结果校准"><span class="toc-number">5.3.</span> <span class="toc-text">2.3 按时间结果校准</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-实验结果与应用"><span class="toc-number">6.</span> <span class="toc-text">3 实验结果与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-PTZ摄像头设置"><span class="toc-number">6.1.</span> <span class="toc-text">3.1 PTZ摄像头设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-座椅检测结果"><span class="toc-number">6.2.</span> <span class="toc-text">3.2 座椅检测结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-座椅检测的应用"><span class="toc-number">6.3.</span> <span class="toc-text">3.3 座椅检测的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-大礼堂的整体情况"><span class="toc-number">6.3.1.</span> <span class="toc-text">3.3.1 大礼堂的整体情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-大礼堂的局部情况"><span class="toc-number">6.3.2.</span> <span class="toc-text">3.3.2 大礼堂的局部情况</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-总结"><span class="toc-number">7.</span> <span class="toc-text">4 总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-致谢"><span class="toc-number">8.</span> <span class="toc-text">5 致谢</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-参考文献"><span class="toc-number">9.</span> <span class="toc-text">6 参考文献</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原文链接"><span class="toc-number">10.</span> <span class="toc-text">原文链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#笔记"><span class="toc-number">11.</span> <span class="toc-text">笔记</span></a></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&text=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&is_video=false&description=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）&body=Check out this article: https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&title=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yuanyunjing.github.io/2019/02/19/A-Smart-Meeting-Management-System-With-Video-Based-Seat-Detection论文翻译/&name=论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-      <ul>
-        <li id="toc"><a class="icon" href="#" onclick="$("#toc-footer").toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
-        <li id="share"><a class="icon" href="#" onclick="$("#share-footer").toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
-        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
-        <li id="menu"><a class="icon" href="#" onclick="$("#nav-footer").toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
-      </ul>
-    </div>
-
-  </div>
 </div>
 
     
-    <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy; 2019 YuanYunjing
+</main>
+
+
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
   </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="https://github.com/YuanYunjing">Projects</a></li>
+</div>
+
+
+<footer class="mt-5">
+    <div class="text-center py-3">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/0x2e/Material-T" target="_blank" rel="nofollow noopener"> <b>Material-T</b></a>
+        <br>
         
-      </ul>
-    </nav>
-  </div>
+    </div>
 </footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/mdbootstrap/js/jquery-3.4.1.min.js"></script>
+<script src="/lib/mdbootstrap/js/popper.min.js"></script>
+<script src="/lib/mdbootstrap/js/bootstrap.min.js?v=4.3.1"></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js?v=4.8.7"></script>
+<script src="/lib/nprogress/nprogress.min.js?v=0.2.0"></script>
+<script src="/js/main.js"></script>
+
+    
+        <script src="/lib/tocbot/tocbot.min.js?v=4.7.0"></script>
+    
+    <script src="/js/post.js"></script>
+
+
+    <script src="/lib/prettify/prettify.min.js?v=0.1.0"></script>
+    <script>
+        $(document).ready(function () {
+            $('pre').addClass('prettyprint linenums');
+            prettyPrint();
+        })
+    </script>
+
+
+    <script src="/lib/typed/typed.min.js?v=2.0.9"></script>
+    <script>
+        var typed = new Typed('#subtitle', {
+            strings: [
+                '  ',
+                "论文学习（A Smart Meeting Management System With Video Based Seat Detection内容翻译）&nbsp;",
+            ],
+            cursorChar: "_",
+            typeSpeed: 70,
+            loop: false,
+        });
+        typed.stop();
+        $(document).ready(function () {
+            $(".typed-cursor").addClass("h2");
+            typed.start();
+        });
+    </script>
+
+
+    <script src="/lib/anchor/anchor.min.js?v=4.2.0"></script>
+    <script>
+        anchors.options = {
+            placement: "right",
+            visible: "false",
+            
+        };
+        var el = "h1,h2,h3,h4,h5,h6".split(",")
+        var res = []
+        for (item of el) {
+            res.push(".markdown-body > " + item)
+        }
+        anchors.add(res.join(", "))
+    </script>
+
+
+
+    <script src="/js/local-search.js"></script>
+    <script>
+        var path = "/local-search.xml";
+        var inputArea = document.querySelector("#local-search-input");
+        inputArea.onclick = function () {
+            getSearchFile(path);
+            this.onclick = null
+        }
+    </script>
 
 </body>
 </html>
-<!-- styles -->
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
-<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
-
-
-<!-- jquery -->
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
-<script src="/js/main.js"></script>
-<!-- Google Analytics -->
-
-    <script type="text/javascript">
-        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-86660611-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
-<!-- Disqus Comments -->
-
-
