@@ -105,6 +105,52 @@
         
         
         <div class="col-12 col-md-8 m-auto">
+            <a href="/2019/04/15/毕设微信公众号开发过程记录/">
+                <p class="h4 index-header">毕设微信公众号开发过程记录</p>
+                <div class="index-excerpt">
+                    
+                        <div class="index-text mb-1">参考链接：https://www.imooc.com/video/7225
+
+ngrok映射工具，将内网映射到公网上，这样就可以在公网访问本地网络服务
+用法：
+
+
+ngrok 8080
+ngrok -config ngrok.cfg -subdomain example 8080(tunnel:运行客户端时，输入以上内容，意为将本地的8080端口链接到example.tunnel.mobi上–本地在毕设文件夹内)
+
+
+效果： 
+
+http://localhost:8080/Test/index.jsp ==http://example.tunnel.mobi/Test/index.jsp
+
+
+
+编写过程
+新建项目 –&gt;写WeixinServlet(微信服务器的入口) –&gt;写doGet方法获取微信传来的信息(写ChectkUtil对传来的信息进行校验) –&gt;配置web.xml文件(访问链接为wx.do) –&gt;启动 Tomcat+ngrok 测试访问 –&gt;配置微信公众号中的url和token(点击提交，转到CheckUtil进行校验，提交成功说明开发环境与微信</div>
+                    
+                </div>
+            </a>
+
+            
+                <div>
+                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-04-15
+                    &nbsp;&nbsp;
+                    
+                    
+                        |&nbsp;&nbsp;<i class="iconfont icon-tag"></i>
+                        
+                            <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%20%E6%AF%95%E8%AE%BE">微信公众号 毕设</a>&nbsp;
+                        
+                    
+                </div>
+            
+        </div>
+    </div>
+
+    <div class="row mb-4 mx-auto">
+        
+        
+        <div class="col-12 col-md-8 m-auto">
             <a href="/2019/04/11/计算机视觉八大任务概述/">
                 <p class="h4 index-header">计算机视觉八大任务概述</p>
                 <div class="index-excerpt">
@@ -275,63 +321,6 @@ print</div>
         </div>
     </div>
 
-    <div class="row mb-4 mx-auto">
-        
-        
-        <div class="col-12 col-md-8 m-auto">
-            <a href="/2019/03/12/Anaconda创建新的虚拟环境/">
-                <p class="h4 index-header">Anaconda创建新的虚拟环境</p>
-                <div class="index-excerpt">
-                    
-                        <div class="index-text mb-1">
-
-用conda创建名为mytensorflow的新环境
-
-查看电脑的conda环境和版本
-
-conda info –envsbase是安装anaconda后默认创建的环境conda –version创建名字为mytensorflow python版本为3.6的新环境conda create –name mytensorflow python=3.6创建环境后用命令conda info –envs查看，星号代表正在运行的环境
-
-
-
-激活刚刚创建的新环境
-
-activate mytensorflow用命令conda info –envs查看，星号代表正在运行的环境
-
-
-
-
-…环境激活
-
-
-在新环境中安装tensorflow
-查看Anaconda repository中我们可利用的版本
-
-conda search tensorflow安装tensorflowconda install tensorflow……
-
-
-
-
-知识内容主要来源：https://zhuanlan.zhihu.com/p/37050300（起初是用于解决tensorflow异常终止问题，如该链接中楼主所整理）知识搬运、</div>
-                    
-                </div>
-            </a>
-
-            
-                <div>
-                    <i class="iconfont icon-riqi2"></i>&nbsp;2019-03-12
-                    &nbsp;&nbsp;
-                    
-                    
-                        |&nbsp;&nbsp;<i class="iconfont icon-tag"></i>
-                        
-                            <a href="/tags/Anaconda%20%E7%9F%A5%E8%AF%86%E6%90%AC%E8%BF%90">Anaconda 知识搬运</a>&nbsp;
-                        
-                    
-                </div>
-            
-        </div>
-    </div>
-
 
 
 <nav aria-label="index posts navigation">
@@ -412,7 +401,7 @@ conda search tensorflow安装tensorflowconda install tensorflow……
         var typed = new Typed('#subtitle', {
             strings: [
                 '  ',
-                "hello&nbsp;",
+                "蹦蹦跳跳真可爱&nbsp;",
             ],
             cursorChar: "_",
             typeSpeed: 70,
