@@ -6,105 +6,120 @@
 
 
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
-    <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/img/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="keep learning...">
-    <meta name="author" content="YuanYunjing">
-    <meta name="keywords" content="Java  machine learning python">
-    <title>微信公众号前端开发（WeUI）+AJAX ~ Orange&#39;s blog</title>
-    <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css?v=5.7.2">
-    <link rel="stylesheet" href="/lib/mdbootstrap/css/bootstrap.min.css?v=4.3.1">
-    <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css?v=4.8.7">
-    <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
-    <link rel="stylesheet" href="/lib/nprogress/nprogress.css?v=0.2.0">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
-    
-        <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
-    
-    <link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="keep learning...">
+  <meta name="author" content="YuanYunjing">
+  <meta name="keywords" content="Java  machine learning python">
+  <title>微信公众号前端开发（WeUI）+AJAX ~ Orange&#39;s blog</title>
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+  
+    <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
+  
+  <link rel="stylesheet" href="/css/main.css">
 
-    
+  
 </head>
 
 
 <body>
-<header style="height: 70vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-<div class="container">
+  <div class="container">
     <a class="navbar-brand" href="/">&nbsp;<strong>Orange&#39;s blog</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <div class="animated-icon"><span></span><span></span><span></span></div>
+      <div class="animated-icon"><span></span><span></span><span></span></div>
     </button>
 
     <!-- Collapsible content -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto text-center">
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/">首页</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/archives/">文章</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/categories/">分类</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/tags/">标签</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/about/">关于</a>
-            </li>
-            
-            
-                <li class="nav-item" id="search-btn">
-                    <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-                </li>
-            
-        </ul>
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">Categories</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-</div>
+  </div>
 
 
 </nav>
-    <div class="view intro-2"
-         style="background: url('/img/post.jpg')no-repeat center center;background-size: cover;">
-        <div class="full-bg-img">
-            <div class="mask rgba-black-light flex-center">
-                <div class="container text-center white-text wow fadeInUp">
-                    <span class="h2" id="subtitle">
-                        
-                    </span>
-                    
-                        <br>
-                        <p>星期日, 四月 21日 2019, 6:59 晚上</p>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 
-<main>
+    <div class="view intro-2" id="background"
+         style="background: url('/img/default.png')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              <p class="mt-3">星期日, 四月 21日 2019, 6:59 晚上</p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
     
-        
+      
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="d-none d-lg-block col-lg-2"></div>
-            <div class="col-lg-8 nopadding-md">
-                <div class="py-5 z-depth-3 board">
-                    <div class="post-content mx-auto">
-                        <div class="markdown-body">
-                            <h1 id="1-微信公众号前端"><a href="#1-微信公众号前端" class="headerlink" title="1. 微信公众号前端"></a>1. 微信公众号前端</h1><blockquote>
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h1 id="1-微信公众号前端"><a href="#1-微信公众号前端" class="headerlink" title="1. 微信公众号前端"></a>1. 微信公众号前端</h1><blockquote>
 <p>在web页面中开发主要用到WeUI、viewport、rem</p>
 <ol>
 <li>WeUI<blockquote>
@@ -112,150 +127,190 @@
 </blockquote>
 </li>
 <li>viewport<blockquote>
-<p>链接为<br><a href="http://www.runoob.com/css/css-rwd-viewport.html" target="_blank" rel="noopener">http://www.runoob.com/css/css-rwd-viewport.html</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0 user-scalable=false&quot; &gt;</span><br></pre></td></tr></table></figure>
+<p>链接为<br><a href="http://www.runoob.com/css/css-rwd-viewport.html" target="_blank" rel="noopener">http://www.runoob.com/css/css-rwd-viewport.html</a><br><code>`</code></p>
 </blockquote>
 </li>
 </ol>
 </blockquote>
-<blockquote>
-<blockquote>
-<p>一行代码即可使页面适应手机屏幕，具体介绍可参考链接，很好用</p>
-</blockquote>
-<ol start="3">
-<li>rem<blockquote>
-<p>rem之后好像没怎么用，以后有更多了解再来补充</p>
-</blockquote>
-</li>
-<li>微信JSSDK开发文档<blockquote>
-<p>这个不太懂具体作用，以后了解了再来补充(..›ᴗ‹..)</p>
-</blockquote>
-</li>
-</ol>
-</blockquote>
-<h1 id="2-AJAX"><a href="#2-AJAX" class="headerlink" title="2. AJAX"></a>2. AJAX</h1><blockquote>
-<p>之前开发中也有用到，经常用到，在这里总结一下，主要为代码举例（两个select级联）：</p>
-<ol>
-<li>html:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--第一级（数据库读值）--&gt;</span><br><span class="line">&lt;select class=&quot;weui-select&quot; id=&quot;tblist&quot; name=&quot;tblist&quot; onChange=&apos;getCRList()&apos;&gt;</span><br><span class="line">	&lt;option&gt;请选择&lt;/option&gt;</span><br><span class="line">	&lt;c:forEach var=&quot;value&quot; items=&quot;$&#123;tblist&#125;&quot;&gt;</span><br><span class="line">	&lt;option value=&quot;$&#123;value&#125;&quot;&gt;</span><br><span class="line">	$&#123;value&#125;</span><br><span class="line">	&lt;/option&gt;</span><br><span class="line">	&lt;/c:forEach&gt;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--第二级（根据第一级的选择动态改变select列表）--&gt;</span><br><span class="line">&lt;select class=&quot;weui-select&quot; id=&quot;crlist&quot; name=&quot;crlist&quot; onChange=&apos;getResult()&apos;&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<ol start="2">
-<li>js:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function getCRList() &#123;</span><br><span class="line">	var $tblist = $(&quot;#tblist&quot;).val();</span><br><span class="line">	</span><br><span class="line">	$(&apos;#tblist&apos;).val($tblist); //让第一个下拉框保持显示选中的值  </span><br><span class="line">	$(&apos;#crlist&apos;).html(&quot;&quot;); //把ci内容设为空  </span><br><span class="line">	</span><br><span class="line">	var $crValue = $(&apos;#crlist&apos;); </span><br><span class="line">	$crValue.append(&apos;&lt;option value=&quot;&quot;&gt;请选择&lt;/option&gt;&apos;);  </span><br><span class="line">		</span><br><span class="line">	$.ajax(&#123;</span><br><span class="line">		url : &quot;&lt;%=request.getContextPath()%&gt;/showCRList&quot;,</span><br><span class="line">		type : &quot;GET&quot;,</span><br><span class="line">		dataType : &quot;json&quot;,  </span><br><span class="line">		async: false,//default is true ,and if it is true,the flag in ajax cant return</span><br><span class="line">					//cant be false because in chinese it means &quot;异步&quot;</span><br><span class="line">		data: &#123;</span><br><span class="line">			tblist : $tblist  //传给后台的值</span><br><span class="line">		&#125;,</span><br><span class="line">		success : function(data, textStatus, jqXHR) &#123;	//data为从后台取回的值	</span><br><span class="line">				if (data &amp;&amp; data.length &gt; 0) &#123;  </span><br><span class="line">				var html = [];  </span><br><span class="line">				for (var i = 0; i &lt; data.length; i++) &#123; </span><br><span class="line">					html.push(&apos;&lt;option value=&quot;&apos;+data[i]+&apos;&quot;&gt;&apos;+data[i]+&apos;&lt;/option&gt;&apos;);  </span><br><span class="line">				&#125;  </span><br><span class="line">				$crValue.append(html.join(&apos;&apos;));  </span><br><span class="line">			&#125;  </span><br><span class="line">		&#125;  </span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<ol start="3">
-<li>Servlet<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line">	</span><br><span class="line">	response.setContentType(&quot;application/json&quot;);  //使用json格式</span><br><span class="line">	</span><br><span class="line">	response.setCharacterEncoding(&quot;UTF-8&quot;);</span><br><span class="line">	request.setCharacterEncoding(&quot;UTF-8&quot;);</span><br><span class="line"></span><br><span class="line">	tblist = (String) request.getParameter(&quot;tblist&quot;);  //不可以用getAttribute...</span><br><span class="line">	rtn2 = crUtil.getCRList(tblist);</span><br><span class="line">	</span><br><span class="line">	PrintWriter writer = response.getWriter();  </span><br><span class="line">	JSONArray array = JSONArray.fromObject(rtn2); </span><br><span class="line">	</span><br><span class="line">	writer.append(array.toString());</span><br><span class="line">			</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<ol start="4">
-<li>CRUtil<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;String&gt; getCRList(String tbname)&#123;</span><br><span class="line">	</span><br><span class="line">	List&lt;String&gt; rtn2 = new ArrayList&lt;String&gt;();</span><br><span class="line">	String sql2=&quot;SELECT NAME FROM crinfo WHERE tbId = (SELECT id FROM tbinfo WHERE NAME = &apos;&quot; + tbname + &quot;&apos;)&quot;;		</span><br><span class="line">	rtn2 = dbutil.getListInfo(sql2);</span><br><span class="line">	return rtn2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="5">
-<li>DatabaseUtil<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	* 获得列表信息</span><br><span class="line">	*/</span><br><span class="line">public List&lt;String&gt; getListInfo(String sql)&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	List&lt;String&gt; rsList = new ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">	String result = null;</span><br><span class="line">	</span><br><span class="line">	Connection conn=null;</span><br><span class="line">	</span><br><span class="line">	String url=&quot;jdbc:mysql://localhost:3306/person_seat_detection&quot;;</span><br><span class="line">	String user_=&quot;root&quot;;</span><br><span class="line">	String psd=&quot;123456&quot;;</span><br><span class="line">			</span><br><span class="line">	</span><br><span class="line">	try &#123;</span><br><span class="line">		Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">		conn=DriverManager.getConnection(url,user_,psd);</span><br><span class="line"></span><br><span class="line">		PreparedStatement ps=</span><br><span class="line">				conn.prepareStatement(sql);</span><br><span class="line">		ResultSet rs=ps.executeQuery();</span><br><span class="line">		while(rs.next())&#123;</span><br><span class="line">			rsList.add(rs.getString(1));</span><br><span class="line">		&#125;</span><br><span class="line">				</span><br><span class="line">	&#125; catch (Exception e) &#123;</span><br><span class="line">		System.out.println(e.getMessage());</span><br><span class="line">	&#125;finally &#123;</span><br><span class="line">		if (conn!=null) &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				conn.close();</span><br><span class="line">			&#125; catch (Exception e2) &#123;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	return rsList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<ol start="6">
-<li>web.xml配置<blockquote>
-<pre><code>&lt;servlet&gt;
+<p><meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=false"></p>
+<pre><code>&gt;&gt; 一行代码即可使页面适应手机屏幕，具体介绍可参考链接，很好用
+&gt;&gt; 
+&gt; 3. rem
+&gt;&gt; rem之后好像没怎么用，以后有更多了解再来补充
+&gt;&gt; 
+&gt; 4. 微信JSSDK开发文档
+&gt;&gt; 这个不太懂具体作用，以后了解了再来补充(..›ᴗ‹..)
+&gt;&gt; 
+&gt; 
+# 2. AJAX
+&gt; 
+&gt; 之前开发中也有用到，经常用到，在这里总结一下，主要为代码举例（两个select级联）：
+&gt; 
+&gt; 1. html:
+</code></pre><!--第一级（数据库读值）-->
+<select class="weui-select" id="tblist" name="tblist" onchange="getCRList()"><br>    <option>请选择</option><br>    &lt;c:forEach var=”value” items=”${tblist}”&gt;<br>    <option value="${value}"><br>    ${value}<br>    </option><br>    &lt;/c:forEach&gt;<br></select>
+
+<!--第二级（根据第一级的选择动态改变select列表）-->
+<p><select class="weui-select" id="crlist" name="crlist" onchange="getResult()"><br></select></p>
+<pre><code>&gt;&gt; 
+&gt; 2. js:
+</code></pre><p>function getCRList() {<br>    var $tblist = $(“#tblist”).val();</p>
+<pre><code>$(&#39;#tblist&#39;).val($tblist); //让第一个下拉框保持显示选中的值  
+$(&#39;#crlist&#39;).html(&quot;&quot;); //把ci内容设为空  
+
+var $crValue = $(&#39;#crlist&#39;); 
+$crValue.append(&#39;&lt;option value=&quot;&quot;&gt;请选择&lt;/option&gt;&#39;);  
+
+$.ajax({
+    url : &quot;&lt;%=request.getContextPath()%&gt;/showCRList&quot;,
+    type : &quot;GET&quot;,
+    dataType : &quot;json&quot;,  
+    async: false,//default is true ,and if it is true,the flag in ajax cant return
+                //cant be false because in chinese it means &quot;异步&quot;
+    data: {
+        tblist : $tblist  //传给后台的值
+    },
+    success : function(data, textStatus, jqXHR) {    //data为从后台取回的值    
+            if (data &amp;&amp; data.length &gt; 0) {  
+            var html = [];  
+            for (var i = 0; i &lt; data.length; i++) { 
+                html.push(&#39;&lt;option value=&quot;&#39;+data[i]+&#39;&quot;&gt;&#39;+data[i]+&#39;&lt;/option&gt;&#39;);  
+            }  
+            $crValue.append(html.join(&#39;&#39;));  
+        }  
+    }  
+    });
+}
+</code></pre><pre><code>&gt;&gt; 
+&gt; 3. Servlet
+</code></pre><p>public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {</p>
+<pre><code>response.setContentType(&quot;application/json&quot;);  //使用json格式
+
+response.setCharacterEncoding(&quot;UTF-8&quot;);
+request.setCharacterEncoding(&quot;UTF-8&quot;);
+
+tblist = (String) request.getParameter(&quot;tblist&quot;);  //不可以用getAttribute...
+rtn2 = crUtil.getCRList(tblist);
+
+PrintWriter writer = response.getWriter();  
+JSONArray array = JSONArray.fromObject(rtn2); 
+
+writer.append(array.toString());
+</code></pre><p>}</p>
+<pre><code>&gt;&gt; 
+&gt; 4. CRUtil
+</code></pre><p>public List<string> getCRList(String tbname){</string></p>
+<pre><code>List&lt;String&gt; rtn2 = new ArrayList&lt;String&gt;();
+String sql2=&quot;SELECT NAME FROM crinfo WHERE tbId = (SELECT id FROM tbinfo WHERE NAME = &#39;&quot; + tbname + &quot;&#39;)&quot;;        
+rtn2 = dbutil.getListInfo(sql2);
+return rtn2;
+</code></pre><p>}</p>
+<pre><code>&gt; 5. DatabaseUtil
+</code></pre><p>/*</p>
+<pre><code>* 获得列表信息
+*/
+</code></pre><p>public List<string> getListInfo(String sql){</string></p>
+<pre><code>List&lt;String&gt; rsList = new ArrayList&lt;String&gt;();
+
+String result = null;
+
+Connection conn=null;
+
+String url=&quot;jdbc:mysql://localhost:3306/person_seat_detection&quot;;
+String user_=&quot;root&quot;;
+String psd=&quot;123456&quot;;
+
+
+try {
+    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+    conn=DriverManager.getConnection(url,user_,psd);
+
+    PreparedStatement ps=
+            conn.prepareStatement(sql);
+    ResultSet rs=ps.executeQuery();
+    while(rs.next()){
+        rsList.add(rs.getString(1));
+    }
+
+} catch (Exception e) {
+    System.out.println(e.getMessage());
+}finally {
+    if (conn!=null) {
+        try {
+            conn.close();
+        } catch (Exception e2) {
+        }
+    }
+
+}
+
+return rsList;
+</code></pre><p>}</p>
+<pre><code>&gt;&gt; 
+&gt; 6. web.xml配置
+&gt;&gt;
+</code></pre><pre><code>&lt;servlet&gt;
     &lt;servlet-name&gt;crServlet&lt;/servlet-name&gt;
     &lt;servlet-class&gt;com.imooc.servlet.CRServlet&lt;/servlet-class&gt;
   &lt;/servlet&gt;
   &lt;servlet-mapping&gt;
     &lt;servlet-name&gt;crServlet&lt;/servlet-name&gt;
     &lt;url-pattern&gt;/showCRList&lt;/url-pattern&gt;
-  &lt;/servlet-mapping&gt;
-</code></pre></blockquote>
-</li>
-</ol>
+  &lt;/servlet-mapping&gt;```                            
+</code></pre><blockquote>
+<blockquote>
+</blockquote>
 </blockquote>
 
-                            <hr>
-                        </div>
-                        <br>
-                        <div>
-                            
-                            <p>
-                                <i class="iconfont icon-tag"></i>
-                                
-                                    <a class="hover-with-bg" href="/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%20%E5%89%8D%E7%AB%AF%20ajax">微信公众号 前端 ajax</a>
-                                
-                            </p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <div class="d-none d-lg-block col-lg-2 toc-container">
+            <hr>
+          </div>
+          <br>
+          <div>
             
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+                <a class="hover-with-bg" href="/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%20%E5%89%8D%E7%AB%AF%20ajax">微信公众号 前端 ajax</a>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
   <div id="toc">
-    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p> 
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
     <div id="tocbot"></div>
   </div>
 
-        </div>
     </div>
+  </div>
 </div>
 
 <!-- custom -->
 
-    <div class="col-lg-7 mx-auto nopadding-md">
-        <div class="container custom post-content mx-auto">
-            <img src="https://octodex.github.com/images/jetpacktocat.png" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
-        </div>
-    </div>
-
 
 <!-- Comments -->
 <div class="col-lg-7 mx-auto nopadding-md">
-    <div class="container comments mx-auto" id="comments">
-        
-            <br><br>
-            
-            <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    <script>               
-        var disqus_shortname = '';
-        var disqus_config = function () {
-            this.page.url = 'https://yuanyunjing.github.io/2019/04/21/微信公众号前端开发（WeUI）-AJAX/'; 
-            this.page.identifier = '/2019/04/21/微信公众号前端开发（WeUI）-AJAX/';
-        };
-        (function() { 
-            var d = document, s = d.createElement('script');
-            s.type = 'text/javascript';
-            s.src = '//'+disqus_shortname+'.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow noopener">comments powered by Disqus.</a></noscript>
-</div>	    
-        
-    </div>
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
 </div>
 
     
-</main>
+  </main>
 
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
 
+  
     <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
@@ -275,86 +330,96 @@
     </div>
   </div>
 </div>
+  
 
-
-<footer class="mt-5">
-    <div class="text-center py-3">
-        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
-        <i class="iconfont icon-love"></i>
-        <a href="https://github.com/0x2e/Material-T" target="_blank" rel="nofollow noopener"> <b>Material-T</b></a>
-        <br>
-        
-    </div>
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+    
+  </div>
 </footer>
 
 <!-- SCRIPTS -->
-<script src="/lib/mdbootstrap/js/jquery-3.4.1.min.js"></script>
-<script src="/lib/mdbootstrap/js/popper.min.js"></script>
-<script src="/lib/mdbootstrap/js/bootstrap.min.js?v=4.3.1"></script>
-<script src="/lib/mdbootstrap/js/mdb.min.js?v=4.8.7"></script>
-<script src="/lib/nprogress/nprogress.min.js?v=0.2.0"></script>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/popper/popper.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js"></script>
 <script src="/js/main.js"></script>
 
-    
-        <script src="/lib/tocbot/tocbot.min.js?v=4.7.0"></script>
-    
-    <script src="/js/post.js"></script>
+  <script src="/js/lazyload.js"></script>
 
 
-    <script src="/lib/prettify/prettify.min.js?v=0.1.0"></script>
-    <script>
-        $(document).ready(function () {
-            $('pre').addClass('prettyprint linenums');
-            prettyPrint();
-        })
-    </script>
+  
+    <script src="/lib/tocbot/tocbot.min.js"></script>
+  
+  <script src="/js/post.js"></script>
 
 
-    <script src="/lib/typed/typed.min.js?v=2.0.9"></script>
-    <script>
-        var typed = new Typed('#subtitle', {
-            strings: [
-                '  ',
-                "微信公众号前端开发（WeUI）+AJAX&nbsp;",
-            ],
-            cursorChar: "_",
-            typeSpeed: 70,
-            loop: false,
-        });
-        typed.stop();
-        $(document).ready(function () {
-            $(".typed-cursor").addClass("h2");
-            typed.start();
-        });
-    </script>
+  <script src="/lib/prettify/prettify.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint linenums');
+      prettyPrint();
+    })
+  </script>
 
 
-    <script src="/lib/anchor/anchor.min.js?v=4.2.0"></script>
-    <script>
-        anchors.options = {
-            placement: "right",
-            visible: "false",
-            
-        };
-        var el = "h1,h2,h3,h4,h5,h6".split(",")
-        var res = []
-        for (item of el) {
-            res.push(".markdown-body > " + item)
-        }
-        anchors.add(res.join(", "))
-    </script>
+  <script src="/lib/typed/typed.min.js"></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "微信公众号前端开发（WeUI）+AJAX&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="/lib/anchor/anchor.min.js"></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
 
 
 
-    <script src="/js/local-search.js"></script>
-    <script>
-        var path = "/local-search.xml";
-        var inputArea = document.querySelector("#local-search-input");
-        inputArea.onclick = function () {
-            getSearchFile(path);
-            this.onclick = null
-        }
-    </script>
+  <script src="/js/local-search.js"></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script>
+    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) || (/Safari/i.test(navigator.userAgent) && !/Chrome/i.test(navigator.userAgent))) {
+      $("#background").css("background-attachment", "scroll");
+    }
+  </script>
 
 </body>
 </html>

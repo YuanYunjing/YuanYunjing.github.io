@@ -6,105 +6,120 @@
 
 
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
-    <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/img/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="keep learning...">
-    <meta name="author" content="YuanYunjing">
-    <meta name="keywords" content="Java  machine learning python">
-    <title>毕设python主要包知识整理备用 ~ Orange&#39;s blog</title>
-    <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css?v=5.7.2">
-    <link rel="stylesheet" href="/lib/mdbootstrap/css/bootstrap.min.css?v=4.3.1">
-    <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css?v=4.8.7">
-    <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
-    <link rel="stylesheet" href="/lib/nprogress/nprogress.css?v=0.2.0">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
-    
-        <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
-    
-    <link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="keep learning...">
+  <meta name="author" content="YuanYunjing">
+  <meta name="keywords" content="Java  machine learning python">
+  <title>毕设python主要包知识整理备用 ~ Orange&#39;s blog</title>
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+  
+    <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
+  
+  <link rel="stylesheet" href="/css/main.css">
 
-    
+  
 </head>
 
 
 <body>
-<header style="height: 70vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-<div class="container">
+  <div class="container">
     <a class="navbar-brand" href="/">&nbsp;<strong>Orange&#39;s blog</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <div class="animated-icon"><span></span><span></span><span></span></div>
+      <div class="animated-icon"><span></span><span></span><span></span></div>
     </button>
 
     <!-- Collapsible content -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto text-center">
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/">首页</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/archives/">文章</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/categories/">分类</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/tags/">标签</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/about/">关于</a>
-            </li>
-            
-            
-                <li class="nav-item" id="search-btn">
-                    <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-                </li>
-            
-        </ul>
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">Categories</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-</div>
+  </div>
 
 
 </nav>
-    <div class="view intro-2"
-         style="background: url('/img/post.jpg')no-repeat center center;background-size: cover;">
-        <div class="full-bg-img">
-            <div class="mask rgba-black-light flex-center">
-                <div class="container text-center white-text wow fadeInUp">
-                    <span class="h2" id="subtitle">
-                        
-                    </span>
-                    
-                        <br>
-                        <p>星期三, 三月 13日 2019, 6:46 晚上</p>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 
-<main>
+    <div class="view intro-2" id="background"
+         style="background: url('/img/default.png')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              <p class="mt-3">星期三, 三月 13日 2019, 6:46 晚上</p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
     
-        
+      
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="d-none d-lg-block col-lg-2"></div>
-            <div class="col-lg-8 nopadding-md">
-                <div class="py-5 z-depth-3 board">
-                    <div class="post-content mx-auto">
-                        <div class="markdown-body">
-                            <blockquote>
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <blockquote>
 <h1 id="argparse模块"><a href="#argparse模块" class="headerlink" title="argparse模块"></a>argparse模块</h1><blockquote>
 <p>import argparse<br>parser = argparse.ArgumentParser()<br>parser.add_argument(‘-src’, ‘–source’, dest=’video_source’, type=int,<br>                        default=0, help=’Device index of the camera.’)<br>parser.add_argument(‘-wd’, ‘–width’, dest=’width’, type=int,<br>                        default=1280, help=’Width of the frames in the video stream.’)<br>parser.add_argument(‘-ht’, ‘–height’, dest=’height’, type=int,<br>                        default=720, help=’Height of the frames in the video stream.’)</p>
 <p>print(args.width)<br>(参数依次为：dest - 解析后的参数名称，默认情况下，对于可选参数选取最长的名称，中划线转换为下划线<br>            type - 命令行参数应该被转换成的类型<br>            default - 不指定参数时的默认值<br>            help - 参数的帮助信息，当指定为 argparse.SUPPRESS 时表示不显示该参数的帮助信息.)<br>使用：e.g. 命令行输入python objection_detection_app.py –width 20<br>输出结果为20</p>
@@ -116,21 +131,24 @@
 <ol>
 <li>MySQLdb<blockquote>
 </blockquote>
-<figure class="highlight plain"><figcaption><span>MySQLdb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">db = MySQLdb.connect(&quot;localhost&quot;,&quot;root&quot;,&apos;...&apos;,&apos;test&apos;)</span><br><span class="line"></span><br><span class="line">cursor = db.cursor()</span><br><span class="line">name=&quot;ali&quot;</span><br><span class="line">age = 10</span><br><span class="line"># sql = &quot;select * from student;&quot;</span><br><span class="line"># sql = &quot;insert into student(name,age) values(&apos;%s&apos;,&apos;%s&apos;)&quot;%(name, age)</span><br><span class="line">sql = &quot;delete from student where name=&apos;%s&apos;&quot;%(name)</span><br><span class="line">cursor.execute(sql)</span><br><span class="line"></span><br><span class="line"># result = cursor.fetchall()</span><br><span class="line"></span><br><span class="line"># print type(result)</span><br><span class="line"></span><br><span class="line">db.commit()</span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure>
-</li>
+<code>`</code> import MySQLdb</li>
 </ol>
 </blockquote>
 </blockquote>
-<blockquote>
-<blockquote>
-<ol start="2">
-<li>pymysql<blockquote>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line"></span><br><span class="line">ms = pymysql.connect(host=&apos;localhost&apos;, user=&apos;root&apos;, passwd=&apos;...&apos;, database=&apos;person_seat_detection&apos;, charset=&apos;utf8&apos;)</span><br><span class="line">cur = ms.cursor()</span><br><span class="line"></span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"># 存数据</span><br><span class="line">sql = &quot;insert into schinfo values(1, &apos;北华航天工业学院&apos;, &apos;河北省廊坊市&apos;)&quot;</span><br><span class="line">cur.execute(sql)</span><br><span class="line">ms.commit()</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"></span><br><span class="line"># 读数据</span><br><span class="line">sql = &quot;select * from schinfo&quot;</span><br><span class="line">count = cur.execute(sql)</span><br><span class="line">for i in range(count):</span><br><span class="line">    print(cur.fetchone())  # 结果为(1, &apos;北华航天工业学院&apos;, &apos;河北省廊坊市&apos;)</span><br><span class="line"></span><br><span class="line">cur.close()</span><br><span class="line">ms.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># count = cur.execute(&quot;&quot;&quot;SELECT cid, sq_name, content, labels, score</span><br><span class="line">#                            from content_copy1_copy</span><br><span class="line">#                            where labels != &apos;&apos;&quot;&quot;&quot;)</span><br><span class="line"># flag = 0</span><br><span class="line"># for i in range(count):</span><br><span class="line">#     fc = cur.fetchone()</span><br><span class="line">#     cur_cid = ms.cursor()</span><br><span class="line">#     count_cid = cur_cid.execute(&quot;select cid from shequscore_copy1_copy where cid = %s&quot;, (fc[0]))</span><br><span class="line">#     if count_cid == 0:</span><br><span class="line">#         cur_inser = ms.cursor()</span><br><span class="line">#         cur_inser.execute(&quot;insert into shequscore_copy1_copy values(%s, %s, %s, %s, %s)&quot;,</span><br><span class="line">#                           (fc[0], fc[1], fc[2], fc[3], fc[4]))</span><br><span class="line">#         flag += 1</span><br><span class="line">#         ms.commit()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-</blockquote>
+<p>db = MySQLdb.connect(“localhost”,”root”,’…’,’test’)</p>
+<p>cursor = db.cursor()<br>name=”ali”<br>age = 10</p>
+<h1 id="sql-“select-from-student-”"><a href="#sql-“select-from-student-”" class="headerlink" title="sql = “select * from student;”"></a>sql = “select * from student;”</h1><h1 id="sql-“insert-into-student-name-age-values-‘-s’-’-s’-”-name-age"><a href="#sql-“insert-into-student-name-age-values-‘-s’-’-s’-”-name-age" class="headerlink" title="sql = “insert into student(name,age) values(‘%s’,’%s’)”%(name, age)"></a>sql = “insert into student(name,age) values(‘%s’,’%s’)”%(name, age)</h1><p>sql = “delete from student where name=’%s’”%(name)<br>cursor.execute(sql)</p>
+<h1 id="result-cursor-fetchall"><a href="#result-cursor-fetchall" class="headerlink" title="result = cursor.fetchall()"></a>result = cursor.fetchall()</h1><h1 id="print-type-result"><a href="#print-type-result" class="headerlink" title="print type(result)"></a>print type(result)</h1><p>db.commit()<br>db.close()</p>
+<pre><code>
+&gt;&gt; 2. pymysql
+&gt;&gt;&gt; 
+</code></pre><p>import pymysql</p>
+<p>ms = pymysql.connect(host=’localhost’, user=’root’, passwd=’…’, database=’person_seat_detection’, charset=’utf8’)<br>cur = ms.cursor()</p>
+<p>‘’’</p>
+<h1 id="存数据"><a href="#存数据" class="headerlink" title="存数据"></a>存数据</h1><p>sql = “insert into schinfo values(1, ‘北华航天工业学院’, ‘河北省廊坊市’)”<br>cur.execute(sql)<br>ms.commit()<br>‘’’</p>
+<h1 id="读数据"><a href="#读数据" class="headerlink" title="读数据"></a>读数据</h1><p>sql = “select * from schinfo”<br>count = cur.execute(sql)<br>for i in range(count):<br>    print(cur.fetchone())  # 结果为(1, ‘北华航天工业学院’, ‘河北省廊坊市’)</p>
+<p>cur.close()<br>ms.close()</p>
+<h1 id="count-cur-execute-“””SELECT-cid-sq-name-content-labels-score"><a href="#count-cur-execute-“””SELECT-cid-sq-name-content-labels-score" class="headerlink" title="count = cur.execute(“””SELECT cid, sq_name, content, labels, score"></a>count = cur.execute(“””SELECT cid, sq_name, content, labels, score</h1><h1 id="from-content-copy1-copy"><a href="#from-content-copy1-copy" class="headerlink" title="from content_copy1_copy"></a>from content_copy1_copy</h1><h1 id="where-labels-‘’”””"><a href="#where-labels-‘’”””" class="headerlink" title="where labels != ‘’”””)"></a>where labels != ‘’”””)</h1><h1 id="flag-0"><a href="#flag-0" class="headerlink" title="flag = 0"></a>flag = 0</h1><h1 id="for-i-in-range-count"><a href="#for-i-in-range-count" class="headerlink" title="for i in range(count):"></a>for i in range(count):</h1><h1 id="fc-cur-fetchone"><a href="#fc-cur-fetchone" class="headerlink" title="fc = cur.fetchone()"></a>fc = cur.fetchone()</h1><h1 id="cur-cid-ms-cursor"><a href="#cur-cid-ms-cursor" class="headerlink" title="cur_cid = ms.cursor()"></a>cur_cid = ms.cursor()</h1><h1 id="count-cid-cur-cid-execute-“select-cid-from-shequscore-copy1-copy-where-cid-s”-fc-0"><a href="#count-cid-cur-cid-execute-“select-cid-from-shequscore-copy1-copy-where-cid-s”-fc-0" class="headerlink" title="count_cid = cur_cid.execute(“select cid from shequscore_copy1_copy where cid = %s”, (fc[0]))"></a>count_cid = cur_cid.execute(“select cid from shequscore_copy1_copy where cid = %s”, (fc[0]))</h1><h1 id="if-count-cid-0"><a href="#if-count-cid-0" class="headerlink" title="if count_cid == 0:"></a>if count_cid == 0:</h1><h1 id="cur-inser-ms-cursor"><a href="#cur-inser-ms-cursor" class="headerlink" title="cur_inser = ms.cursor()"></a>cur_inser = ms.cursor()</h1><h1 id="cur-inser-execute-“insert-into-shequscore-copy1-copy-values-s-s-s-s-s-”"><a href="#cur-inser-execute-“insert-into-shequscore-copy1-copy-values-s-s-s-s-s-”" class="headerlink" title="cur_inser.execute(“insert into shequscore_copy1_copy values(%s, %s, %s, %s, %s)”,"></a>cur_inser.execute(“insert into shequscore_copy1_copy values(%s, %s, %s, %s, %s)”,</h1><h1 id="fc-0-fc-1-fc-2-fc-3-fc-4"><a href="#fc-0-fc-1-fc-2-fc-3-fc-4" class="headerlink" title="(fc[0], fc[1], fc[2], fc[3], fc[4]))"></a>(fc[0], fc[1], fc[2], fc[3], fc[4]))</h1><h1 id="flag-1"><a href="#flag-1" class="headerlink" title="flag += 1"></a>flag += 1</h1><h1 id="ms-commit"><a href="#ms-commit" class="headerlink" title="ms.commit()"></a>ms.commit()</h1><p><code>`</code></p>
 <blockquote>
 <blockquote>
 </blockquote>
@@ -210,72 +228,53 @@ print count</code><br><code>for i in range(1):
 </blockquote>
 </blockquote>
 
-                            <hr>
-                        </div>
-                        <br>
-                        <div>
-                            
-                            <p>
-                                <i class="iconfont icon-tag"></i>
-                                
-                            </p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <div class="d-none d-lg-block col-lg-2 toc-container">
+            <hr>
+          </div>
+          <br>
+          <div>
             
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
   <div id="toc">
-    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p> 
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
     <div id="tocbot"></div>
   </div>
 
-        </div>
     </div>
+  </div>
 </div>
 
 <!-- custom -->
 
-    <div class="col-lg-7 mx-auto nopadding-md">
-        <div class="container custom post-content mx-auto">
-            <img src="https://octodex.github.com/images/jetpacktocat.png" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
-        </div>
-    </div>
-
 
 <!-- Comments -->
 <div class="col-lg-7 mx-auto nopadding-md">
-    <div class="container comments mx-auto" id="comments">
-        
-            <br><br>
-            
-            <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    <script>               
-        var disqus_shortname = '';
-        var disqus_config = function () {
-            this.page.url = 'https://yuanyunjing.github.io/2019/03/13/毕设python主要包知识整理备用/'; 
-            this.page.identifier = '/2019/03/13/毕设python主要包知识整理备用/';
-        };
-        (function() { 
-            var d = document, s = d.createElement('script');
-            s.type = 'text/javascript';
-            s.src = '//'+disqus_shortname+'.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow noopener">comments powered by Disqus.</a></noscript>
-</div>	    
-        
-    </div>
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
 </div>
 
     
-</main>
+  </main>
 
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
 
+  
     <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
@@ -295,86 +294,96 @@ print count</code><br><code>for i in range(1):
     </div>
   </div>
 </div>
+  
 
-
-<footer class="mt-5">
-    <div class="text-center py-3">
-        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
-        <i class="iconfont icon-love"></i>
-        <a href="https://github.com/0x2e/Material-T" target="_blank" rel="nofollow noopener"> <b>Material-T</b></a>
-        <br>
-        
-    </div>
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+    
+  </div>
 </footer>
 
 <!-- SCRIPTS -->
-<script src="/lib/mdbootstrap/js/jquery-3.4.1.min.js"></script>
-<script src="/lib/mdbootstrap/js/popper.min.js"></script>
-<script src="/lib/mdbootstrap/js/bootstrap.min.js?v=4.3.1"></script>
-<script src="/lib/mdbootstrap/js/mdb.min.js?v=4.8.7"></script>
-<script src="/lib/nprogress/nprogress.min.js?v=0.2.0"></script>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/popper/popper.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js"></script>
 <script src="/js/main.js"></script>
 
-    
-        <script src="/lib/tocbot/tocbot.min.js?v=4.7.0"></script>
-    
-    <script src="/js/post.js"></script>
+  <script src="/js/lazyload.js"></script>
 
 
-    <script src="/lib/prettify/prettify.min.js?v=0.1.0"></script>
-    <script>
-        $(document).ready(function () {
-            $('pre').addClass('prettyprint linenums');
-            prettyPrint();
-        })
-    </script>
+  
+    <script src="/lib/tocbot/tocbot.min.js"></script>
+  
+  <script src="/js/post.js"></script>
 
 
-    <script src="/lib/typed/typed.min.js?v=2.0.9"></script>
-    <script>
-        var typed = new Typed('#subtitle', {
-            strings: [
-                '  ',
-                "毕设python主要包知识整理备用&nbsp;",
-            ],
-            cursorChar: "_",
-            typeSpeed: 70,
-            loop: false,
-        });
-        typed.stop();
-        $(document).ready(function () {
-            $(".typed-cursor").addClass("h2");
-            typed.start();
-        });
-    </script>
+  <script src="/lib/prettify/prettify.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint linenums');
+      prettyPrint();
+    })
+  </script>
 
 
-    <script src="/lib/anchor/anchor.min.js?v=4.2.0"></script>
-    <script>
-        anchors.options = {
-            placement: "right",
-            visible: "false",
-            
-        };
-        var el = "h1,h2,h3,h4,h5,h6".split(",")
-        var res = []
-        for (item of el) {
-            res.push(".markdown-body > " + item)
-        }
-        anchors.add(res.join(", "))
-    </script>
+  <script src="/lib/typed/typed.min.js"></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "毕设python主要包知识整理备用&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="/lib/anchor/anchor.min.js"></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
 
 
 
-    <script src="/js/local-search.js"></script>
-    <script>
-        var path = "/local-search.xml";
-        var inputArea = document.querySelector("#local-search-input");
-        inputArea.onclick = function () {
-            getSearchFile(path);
-            this.onclick = null
-        }
-    </script>
+  <script src="/js/local-search.js"></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script>
+    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) || (/Safari/i.test(navigator.userAgent) && !/Chrome/i.test(navigator.userAgent))) {
+      $("#background").css("background-attachment", "scroll");
+    }
+  </script>
 
 </body>
 </html>
