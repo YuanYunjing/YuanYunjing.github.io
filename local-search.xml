@@ -8,9 +8,15 @@
     <link href="undefined2019/10/24/Lecode-Java-%E6%95%B0%E7%BB%84-%E8%8E%B7%E5%8F%96%E9%95%BF%E5%BA%A6-%E8%BF%94%E5%9B%9E%E6%95%B0%E7%BB%84%E6%96%B9%E5%BC%8F/"/>
     <url>2019/10/24/Lecode-Java-%E6%95%B0%E7%BB%84-%E8%8E%B7%E5%8F%96%E9%95%BF%E5%BA%A6-%E8%BF%94%E5%9B%9E%E6%95%B0%E7%BB%84%E6%96%B9%E5%BC%8F/</url>
     
-    <content type="html"><![CDATA[<ol><li><p>题目：两数之和</p><blockquote><p>Java求解：</p><pre><code>class Solution {    public int[] twoSum(int[] nums, int target) {        int[] result = new int[2];        for(int i=0; i&lt;nums.length-1; i++){ // 获得数组长度            for(int j=i+1; j&lt;nums.length; j++){                if(nums[i] + nums[j] == target){                    result[0] = i;                    result[1] = j;                }            }        }        return result; // 返回值为数组    }}</code></pre></blockquote></li><li><p>总结</p><blockquote><p>获得数组长度方式：</p><pre><code>nums.length</code></pre><p>返回值为数组方式：</p><pre><code>int[] result = new int[2];result[0] = i;result[1] = j;return result;</code></pre></blockquote></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>题目：两数之和</li></ol><blockquote><p>Java求解：</p><pre><code>class Solution {    public int[] twoSum(int[] nums, int target) {        int[] result = new int[2];        for(int i=0; i&lt;nums.length-1; i++){ // 获得数组长度            for(int j=i+1; j&lt;nums.length; j++){                if(nums[i] + nums[j] == target){                    result[0] = i;                    result[1] = j;                }            }        }        return result; // 返回值为数组    }}</code></pre></blockquote><ol start="2"><li>总结</li></ol><blockquote><p>1)获得数组长度方式：</p><pre><code>nums.length</code></pre><p>2)返回值为数组方式：</p><pre><code>int[] result = new int[2];result[0] = i;result[1] = j;return result;</code></pre></blockquote>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>Lecode Java</tag>
+      
+    </tags>
     
   </entry>
   
