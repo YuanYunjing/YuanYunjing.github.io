@@ -133,9 +133,24 @@
         <div class="index-excerpt">
           <div class="index-text mb-1">题目：两数之和
 Java求解：
-class Solution {    public int[] twoSum(int[] nums, int target) {        int[] result = new int[2];        for(int i=0; i&lt;nums.length-1; i++){ // 获得数组长度            for(int j=i+1; j&lt;nums.length; j++){                if(nums[i] + nums[j] == target){                    result[0] = i;                    result[1] = j;                }            }        }        return result; // 返回值为数组    }}
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+        for(int i=0; i&lt;nums.length-1; i++){ // 获得数组长度
+            for(int j=i+1; j&lt;nums.length; j++){
+                if(nums[i] + nums[j] == target){
+                    result[0] = i;
+                    result[1] = j;
+                }
+            }
+        }
+        return result; // 返回值为数组
+    }
+}
 获得数组长度方式：nums.length返回值为数组方式：
-int[] result = new int[2];result[0] = i;result[1] = j;r</div>
+int[] result = new int[2];
+result[0] = i;
+</div>
         </div>
       </a>
 
